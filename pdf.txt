@@ -1,0 +1,372 @@
+% !TeX program = pdflatex
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{CJKutf8}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\setlength{\abovedisplayskip}{0.8em}
+\setlength{\belowdisplayskip}{0.8em}
+\setlength{\abovedisplayshortskip}{0.6em}
+\setlength{\belowdisplayshortskip}{0.6em}
+\setlist[itemize]{topsep=0.3em,itemsep=0.2em,parsep=0pt,partopsep=0pt}
+\setlist[enumerate]{topsep=0.3em,itemsep=0.2em,parsep=0pt,partopsep=0pt}
+\allowdisplaybreaks[2]
+
+\urlstyle{same}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+\title{Web-PQB: 面向网页智能体的过程质量评测基准}
+\author{}
+\date{}
+
+\begin{document}
+\begin{CJK*}{UTF8}{gbsn}
+\maketitle
+
+\section{Introduction}
+
+
+近年来，以 WebArena 和 VisualWebArena 为代表的网页智能体评测基准，显著推动了真实网页环境中智能体能力的系统评估。这类 benchmark 在任务真实性、环境可复现性以及执行式评测方面取得了重要进展，也使“在开放网页环境中完成真实任务”成为衡量智能体能力的核心测试场景。然而，现有主流评测范式仍然主要依赖结果导向的二值指标：一个智能体通常根据其是否最终到达正确终态被判定为成功或失败。这样的设计虽然便于统一评估，却会将质量截然不同的交互轨迹压缩为相同的结果标签。
+
+这一局限在真实网页任务中尤为明显。对于同一任务，一个智能体可能沿着简洁、直接且稳定的主路径快速完成；另一个智能体则可能频繁误入无关页面、执行多余搜索、陷入局部无进展循环，并在多轮回退与自我纠错之后才勉强完成任务。在传统 success-only 评测中，这两条轨迹都会被视为“成功”，但它们在交互成本、路径偏离程度、恢复代价以及过程稳定性上显然代表着不同层次的能力。类似地，一条最终失败的轨迹也未必过程质量一定很低：它可能在大部分阶段都保持了较好的目标导向性，只是在后期关键步骤发生失误而未能完成任务。换言之，网页智能体评测中真正缺失的，并不是单一的“效率”或“冗余”指标，而是一个更一般、更本质的评测对象：\textbf{目标导向交互过程的质量}。
+
+基于这一观察，我们提出将\textbf{网页智能体过程质量（Process Quality）}作为新的第一类评测对象。我们关注的不仅是智能体是否完成任务，更是其交互轨迹在多大程度上体现了高质量的目标导向过程。这样的过程质量应同时涵盖多个维度，包括轨迹是否直接、交互是否高效、阶段推进是否一致、偏离主路径后的恢复是否低成本，以及过程中是否存在大量重复、无效或低进展动作。更重要的是，过程质量不能被简单还原为动作步数：两条动作数接近的轨迹，可能具有完全不同的路径偏离模式、恢复成本与无进展结构；反过来，一条稍长但始终沿主路径推进的轨迹，也可能比一条更短却严重偏航后侥幸成功的轨迹质量更高。在这一视角下，成功与失败不再是两个割裂的评测世界，而是同一“过程质量连续谱”上的不同位置：高质量轨迹通常表现为直接、稳定且最终成功；中等质量轨迹可能在局部阶段发生偏离，但能够以较低代价纠正回来；低质量轨迹则可能长期偏离主路径、恢复成本过高，最终走向失败。
+
+这一问题不仅影响 benchmark 本身的判别力，也直接影响网页智能体研究的进展方向。若评测体系无法区分“直接成功”与“绕路成功”，则 leaderboard 可能高估依赖暴力试错与高成本纠偏的系统，低估真正具备稳定目标导向能力的智能体。与此同时，缺乏过程质量评测也会削弱误差分析与系统改进的能力：研究者往往只能观察到模型“成功了”或“失败了”，却无法进一步判断其究竟是在早期偏航、陷入局部循环、恢复代价过高，还是仅在最后阶段发生执行失误。更进一步地，success rate 本质上是一个极其稀疏且粗糙的监督信号，难以为未来网页智能体的过程优化、奖励建模和过程对齐提供足够细粒度的训练目标。因此，一个面向过程质量的 benchmark 不仅是对现有评测维度的补充，也是在为下一代网页智能体提供更真实的比较标准、更强的诊断工具，以及更密集的优化信号。
+
+近期已有一些研究开始意识到仅用 success rate 评测网页智能体是不充分的。例如，WebGraphEval 从图结构角度分析多轮网页轨迹，揭示了成功率之外的行为差异；AgentRewardBench、Web-Shepherd / WebRewardBench 以及 WebArbiter / WebPRMBench 开始关注轨迹级 judge、步骤偏好和过程奖励建模；ST-WebAgentBench 与 WABER 则从安全性、可靠性或效率等维度指出 outcome-only evaluation 的局限。这些工作为“超越最终成功率”的评测方向提供了重要启发。然而，现有研究仍然更多聚焦于轨迹分析方法、judge 或 reward 模型、可靠性或安全性等特定问题，尚缺少一个以网页智能体外显交互过程质量本身为中心、并能统一刻画成功与失败轨迹质量差异的 benchmark。换言之，当前领域已经逐步认识到“结果不够”，但尚未形成一个围绕“过程质量”展开、同时具备严密底层量化逻辑与可扩展自动化评测机制的系统性评测基准。
+
+为填补这一空白，本文提出一个面向网页智能体的过程型 benchmark，其核心目标不是仅判断最终结果是否正确，而是系统评估轨迹本身的质量。该 benchmark 评测的是智能体的外显交互轨迹，而不是其隐藏的 chain-of-thought；其关注的是轨迹是否持续朝目标推进、是否偏离高质量主路径、偏离后是否能够低成本恢复，以及过程中低价值交互的规模。为此，我们进一步提出一套底层过程量化框架，将每一步的过程质量分解为两个互补维度：一方面刻画当前动作是否带来了实质性的局部任务推进，另一方面刻画该动作在全局路径上是否仍然保持高质量的目标导向性。基于这一设计，我们能够统一衡量有效推进、路径偏离、冗余操作与恢复代价，并将其聚合为轨迹级的过程质量得分。进一步地，为了使这一 benchmark 能够从小规模人工分析扩展到大规模自动评测，我们构建了网页过程奖励模型（Web-PRM），以支持对网页交互轨迹的自动化过程评分。
+
+本文的主要贡献如下：
+\begin{enumerate}[leftmargin=1.6em]
+  \item 我们提出了一个新的网页智能体评测问题：过程质量评测。不同于现有 benchmark 主要围绕最终任务是否成功展开，我们将目标导向交互过程的质量提升为核心评测对象，统一刻画成功轨迹与失败轨迹之间的过程差异。
+  \item 我们构建了一个面向网页智能体的过程型 benchmark。该 benchmark 不再将不同质量的轨迹压缩为同一个 success label，而是系统暴露并区分路径直接性、偏离与恢复、重复与无进展交互等关键过程现象，从而为网页智能体提供更真实的比较标准与更强的诊断能力。
+  \item 我们提出了一套新的过程评估体系，并进一步构建了网页过程奖励模型 Web-PRM。其中，评估体系从局部推进与全局路径质量两个层面细粒度量化轨迹过程质量，Web-PRM 则为这一 benchmark 提供可扩展的自动化过程评分能力，也为未来基于过程奖励的网页智能体优化提供基础。
+\end{enumerate}
+
+\section{Related Work}
+
+\textit{This section is omitted in the current draft.}
+
+\section{Defining Web Agent Process Quality}
+
+在本节中，我们将网页智能体的外显交互过程形式化为一个离散时间交互轨迹，并在此基础上提出用于刻画\textbf{过程质量（Process Quality）}的步骤级评测框架。我们的目标不是仅根据最终状态判断任务是否完成，而是评估：轨迹中的每一步在多大程度上推进了任务，以及这一推进是否沿着高质量目标导向路径发生。
+
+给定网页环境 \(\mathcal{E}\) 和自然语言任务目标 \(G\)，一次交互 episode 可表示为轨迹
+\[
+\tau=\{o_0,a_1,o_1,\dots,a_T,o_T\},
+\]
+其中 \(o_t\in\mathcal{O}\) 表示第 \(t\) 步可观测网页状态，例如 DOM、accessibility tree 或页面截图，\(a_t\in\mathcal{A}\) 表示智能体在该状态下执行的动作，例如点击、输入、滚动或筛选。传统 outcome-only benchmark 通常仅根据最终观测 \(o_T\) 是否满足任务目标 \(G\) 给出一个二值结果 \(R(o_T\mid G)\in\{0,1\}\)，从而忽略中间轨迹的质量差异。为评测不同轨迹在“过程质量连续谱”上的位置，我们进一步在步骤级别为轨迹赋予密集过程信号。
+
+\subsection{Step-Level Process Quality}
+
+对于第 \(t\) 步动作 \(a_t\)，我们将其过程质量定义为两个互补维度的乘积：
+\[
+R_t = V_t \cdot O_t,
+\]
+其中，\(V_t\) 表示该动作带来的\textbf{局部推进值（Local Progress Value）}，用于衡量从 \(o_{t-1}\) 到 \(o_t\) 的状态变化是否构成有效任务推进；\(O_t\) 表示该动作对应的\textbf{路径质量因子（Path Quality Factor）}，用于衡量该动作是否属于当前上下文下的高质量目标导向选择。直观地说，\(V_t\) 回答“这一步是否做了有用的事”，而 \(O_t\) 回答“这一步是否以高质量的方式做了这件事”。
+
+这种分解使我们能够区分多种传统 success rate 无法区分的现象。例如，一个动作可能带来了局部推进，但它通过明显绕路才实现该推进；此时 \(V_t\) 较高而 \(O_t\) 较低。反过来，一个动作也可能不直接增加最终完成度，却是从错误分支返回主路径所必需的最佳纠偏动作；此时 \(V_t\) 可以是正向恢复，而 \(O_t\) 仍然保持较高。
+
+\subsection{Local Progress Value}
+
+\(V_t\) 用于衡量相邻两个观测 \(o_{t-1}\) 与 \(o_t\) 之间的变化，是否在局部上对任务目标 \(G\) 构成实质推进。它关注的是状态转移的直接效果，而不显式依赖更长历史。我们在 benchmark 中将其定义为一个离散信号：
+\[
+V_t \in \{-1,0,+1\}.
+\]
+
+\begin{itemize}[leftmargin=1.6em]
+  \item \textbf{\(V_t=+1\) (Positive Progress)}：动作 \(a_t\) 触发了有效推进，例如进入关键页面、完成必要筛选、填入正确信息、选中目标项，或从偏离状态成功恢复到正确阶段。
+  \item \textbf{\(V_t=0\) (Zero Progress)}：动作 \(a_t\) 未带来实质推进，表现为中性探索、信息收集或无害低价值操作，例如滚动页面、展开菜单但未作选择、局部查看但未改变任务阶段。
+  \item \textbf{\(V_t=-1\) (Negative Regress)}：动作 \(a_t\) 导致明显倒退，例如进入错误分支、强化无关路径、清空已完成表单，或触发与目标无关的破坏性状态转移。
+\end{itemize}
+
+这一设计使 benchmark 能够将“有效推进”“中性探索”和“明确倒退”三类步骤区分开来，而不是仅在轨迹末端给出一次统一判断。
+
+\subsection{Path Quality Factor}
+
+仅依赖 \(V_t\) 仍不足以刻画过程质量，因为“反复绕路但最终推进”的轨迹仍然可能在多个步骤上获得正向局部推进。为此，我们进一步引入
+\[
+O_t\in(0,1]
+\]
+来评估动作选择的全局路径质量。
+
+对于当前观测 \(o_{t-1}\)，我们定义一个由 benchmark 高质量过程定义诱导出的高质量动作集合 \(\mathcal{A}^{*}_{o_{t-1}}\)。这里的“高质量”并不意味着环境意义下的唯一理论最优解，而是指：在 benchmark 所定义的高质量过程中，当前状态下被认为是直接、合理且代价较低的动作选择，包括必要的主路径推进动作以及从错误状态返回主路径的最佳纠偏动作。
+
+在此基础上，我们令 \(O_0=1.0\)，并引入固定衰减系数
+\[
+\gamma_{\text{penalty}}\in(0,1).
+\]
+路径质量因子按如下方式递推更新：
+\[
+O_t=
+\begin{cases}
+1.0, & \text{if } a_t\in\mathcal{A}^{*}_{o_{t-1}},\\
+\gamma_{\text{penalty}}\cdot O_{t-1}, & \text{if } a_t\notin\mathcal{A}^{*}_{o_{t-1}}.
+\end{cases}
+\]
+
+该设计体现了两点。第一，当智能体持续沿高质量路径推进，或在偏离后采取了当前观测下的最佳恢复动作时，轨迹应重新回到高质量区间，因此 \(O_t\) 保持或恢复到高值。第二，当智能体采取次优选择、执行绕路操作或在错误分支上继续停留时，\(O_t\) 应发生衰减，从而对低效交互模式施加累积性惩罚。由此，benchmark 可以区分“短暂偏离后迅速纠正”和“持续低质量偏航”这两类行为，而不仅仅记录它们是否最终成功。
+
+\subsection{Trajectory Process Quality}
+
+在获得步骤级过程得分 \(\{R_t\}_{t=1}^{T}\) 后，我们将整条轨迹 \(\tau\) 的全局过程质量定义为
+\[
+TPQ(\tau)=\frac{1}{T}\sum_{t=1}^{T}R_t.
+\]
+由于
+\[
+V_t\in\{-1,0,+1\}, \qquad O_t\in(0,1],
+\]
+因此
+\[
+R_t\in[-1,1], \qquad TPQ(\tau)\in[-1,1].
+\]
+这一聚合方式将传统二值的任务结果展开为连续的过程质量空间。高质量轨迹通常在大多数步骤上兼具正向推进和高路径质量，因此获得较高 TPQ；包含局部绕路或恢复行为的轨迹会因部分低质量步骤而获得中等得分；而长期偏离主路径、反复无进展或不断强化错误分支的轨迹则会获得较低得分，甚至呈现显著负向累积。
+
+需要强调的是，TPQ 的目标并不是替代最终成功率，而是在 success/failure 之外增加一个对交互过程本身的评测维度。它使 benchmark 能够系统地区分“高效成功”“绕路成功”“可恢复偏离”与“不可恢复失败”等不同类型的轨迹，为后续的自动化 judge 训练和基准比较提供统一的量化基础。
+
+\section{The Web-PQB Benchmark}
+
+为了将第 3 节提出的过程质量评测框架落地为可复现的自动化评测基准，我们构建了 \textbf{Web-PQB (Web Process-Quality Benchmark)}，一个面向网页智能体目标导向交互过程的过程型 benchmark。与传统 outcome-only benchmark 不同，Web-PQB 的核心目标不是仅判断任务是否最终达成，而是系统评测智能体在真实网页环境中的过程质量。具体而言，Web-PQB 旨在暴露和量化如下关键现象：轨迹是否沿主路径直接推进、是否发生偏离、偏离后是否能够低成本恢复，以及过程中是否存在大量重复、无效或低价值交互。换言之，Web-PQB 的设计目标不是让网页任务“更难”，而是让它们更稳定地\textbf{区分不同质量的交互过程}。
+
+\subsection{Design Goals}
+
+Web-PQB 的构建遵循三项核心目标。
+
+\paragraph{Process sensitivity.}
+任务必须能够暴露显著的过程差异，而不仅仅是终态差异。对于同一任务，高质量轨迹、绕路成功轨迹以及偏离后失败轨迹应能自然出现，从而使过程评测成为必要维度，而不是附加分析。
+
+\paragraph{Execution compatibility.}
+Web-PQB 保留与现有网页 benchmark 一致的执行式成功判定机制。最终任务是否完成仍然是 benchmark 的一个输出维度，但不再是唯一输出维度。过程评测建立在 success/failure 之上，而不是替代它。
+
+\paragraph{Scalable process evaluation.}
+Web-PQB 的设计必须服务于大规模自动化过程打分。因此，benchmark 的任务与轨迹表示需要能够支持步骤级过程监督与 Web-PRM 的训练和推理，而不依赖人工逐条阅读完整轨迹进行评测。
+
+这三项目标共同决定了 Web-PQB 的核心定位：它不是在现有 benchmark 上附加几个分析指标，而是一个围绕“过程质量”这一新评测对象构建的系统性 benchmark。
+
+\subsection{Task Construction}
+
+Web-PQB 复用了现有主流网页智能体 benchmark 的底层网站环境，以保持真实网页任务的复杂性、可操作性和执行式评测的一致性。然而，我们并不直接复用原始任务集，而是采用\textbf{过程导向的任务筛选与重构策略}。任务是否纳入 Web-PQB，不以其表面难度为主要标准，而以其是否能够稳定暴露过程质量差异为核心标准。
+
+具体而言，一个任务被纳入 Web-PQB，通常需要满足以下条件：
+\begin{enumerate}[leftmargin=1.6em]
+  \item 在该任务上，不同质量的轨迹能够自然分化；
+  \item 其过程差异可以从外显交互中被识别；
+  \item 最终结果仍然可以通过执行式方式验证；
+  \item 任务的页面 affordance 与目标约束足够明确，从而使过程质量问题不会被任务语义歧义所淹没。
+\end{enumerate}
+
+在此基础上，我们对原始任务进行过程导向重构。重构的目标不是改变任务本身的语义目标，而是增强其过程区分能力。例如，我们会优先保留那些允许多种交互策略收敛到同一终态、但路径质量差异明显的任务；同时，我们也会构造更能暴露偏离与恢复行为的任务实例，以避免 benchmark 退化为单纯的结果正确性测试。
+
+\subsection{Task Taxonomy}
+
+为了系统覆盖网页交互中最能体现过程质量差异的典型现象，Web-PQB 将任务组织为三类核心任务族。
+
+\paragraph{Multi-path Convergence Tasks.}
+这类任务存在多条可达路径，但不同路径在质量上差异显著。它们主要用于测试智能体是否能够识别并保持高质量主路径，而不是依赖穷举式浏览、重复试错或局部搜索来完成任务。该类任务特别适合暴露“最终结果正确，但过程明显低效”的轨迹。
+
+\paragraph{High-distraction Trap Tasks.}
+这类任务在页面中包含与目标高度相似的诱导项、干扰链接或高混淆元素，用于测试智能体在复杂环境中维持目标导向性的能力。它们主要暴露以下过程现象：局部误判、错误分支停留、短暂偏航后的恢复能力，以及低价值探索是否被有效抑制。
+
+\paragraph{Recovery-centric Tasks.}
+这类任务显式强调偏离后的纠偏与恢复。与前两类任务相比，它们更关注轨迹在进入错误状态后的行为差异：高质量轨迹应迅速识别当前状态与任务目标之间的不匹配，并以较低成本回到正确方向；低质量轨迹则会在错误页面中继续尝试，扩大偏离甚至陷入无进展循环。为了强化这一能力测试，我们在一部分任务中采用非理想初始状态设定，使智能体从非标准位置开始任务执行，从而更直接地暴露其状态感知与恢复能力。
+
+这三类任务共同构成了 Web-PQB 的核心挑战空间，使 benchmark 能够系统评测路径直接性、干扰抵抗、偏离恢复与低价值交互等不同维度的过程质量。
+
+\subsection{Benchmark Data Format}
+
+在数据组织上，Web-PQB 的每个样本不仅包含传统 benchmark 所需的任务目标与最终成功检查器，还包含过程评测所需的结构化字段。对于每个任务，我们至少提供以下组成部分：
+\begin{itemize}[leftmargin=1.6em]
+  \item \textbf{Task specification}：自然语言任务目标、初始状态和网站环境信息；
+  \item \textbf{Execution-based evaluator}：用于判断最终任务是否完成的标准执行式检查器；
+  \item \textbf{Trajectory data}：智能体在任务执行过程中产生的外显交互轨迹；
+  \item \textbf{Process supervision targets}：用于支持步骤级过程评测和 Web-PRM 训练的步骤级标签或对应监督数据；
+  \item \textbf{Task metadata}：任务所属类别、干扰强度、是否包含恢复挑战等附加属性。
+\end{itemize}
+
+在这一组织方式下，Web-PQB 的输出不再只是单一的 success label，而是同时支持两类评测结果：
+\begin{enumerate}[leftmargin=1.6em]
+  \item 结果级输出，即任务是否最终完成；
+  \item 过程级输出，即轨迹在局部推进、路径质量、偏离与恢复等方面的连续质量得分。
+\end{enumerate}
+
+这种数据组织形式使 Web-PQB 从传统的“任务集合”提升为一个包含任务、过程监督和自动化评测接口的完整 benchmark。它既保留了与现有网页 benchmark 的兼容性，也为后续的步骤级评分、轨迹级比较和 Web-PRM 自动评测提供了统一的数据基础。
+
+\section{Evaluation Pipeline}
+
+Web-PQB 的评测同时输出\textbf{结果级指标}与\textbf{过程级指标}。对于任意网页智能体在任务 \(x\) 上产生的交互轨迹
+\[
+\tau=(o_0,a_1,o_1,\dots,a_T,o_T),
+\]
+我们首先使用任务自带的执行式评测器判断其最终是否完成任务；随后，对轨迹中的每一步进行过程评分，并聚合得到轨迹级过程质量得分。为支持大规模自动化评测，我们进一步训练一个轻量级网页过程奖励模型 \textbf{Web-PRM}，作为步骤级过程裁判。
+
+\subsection{Evaluation Metrics}
+
+对于每条轨迹，我们同时报告最终结果指标与过程质量指标。
+
+\paragraph{Outcome Metric.}
+我们保留与现有网页 benchmark 一致的任务成功率（Success Rate, SR）作为结果级指标。对于任务集合 \(\{x_i\}_{i=1}^{N}\) 及其对应轨迹 \(\{\tau_i\}_{i=1}^{N}\)，成功率定义为
+\[
+SR=\frac{1}{N}\sum_{i=1}^{N}\mathbb{I}(C_i(\tau_i)=1),
+\]
+其中 \(C_i\) 表示任务 \(x_i\) 的执行式成功检查器。
+
+\paragraph{Core Process Metric.}
+过程质量主指标采用第 3 节定义的轨迹过程质量（Trajectory Process Quality, TPQ）：
+\[
+TPQ(\tau)=\frac{1}{T}\sum_{t=1}^{T}R_t,
+\qquad
+R_t=V_t\cdot O_t.
+\]
+其中，\(V_t\) 衡量局部任务推进，\(O_t\) 衡量该步动作对应的路径质量。TPQ 越高，表示轨迹越能持续以高质量方式朝目标推进；TPQ 越低，则说明轨迹中包含更多低价值步骤、偏离或恢复代价。对于评测集 \(\{\tau_i\}_{i=1}^{N}\)，我们报告平均过程质量
+\[
+\overline{TPQ}=\frac{1}{N}\sum_{i=1}^{N} TPQ(\tau_i).
+\]
+
+\paragraph{Diagnostic Metrics.}
+为提高评测的可解释性，我们进一步报告以下诊断指标。
+
+对于单条轨迹 \(\tau\)，定义
+\[
+PR(\tau)=\frac{1}{T}\sum_{t=1}^{T}\mathbb{I}(V_t=+1),
+\qquad
+NPR(\tau)=\frac{1}{T}\sum_{t=1}^{T}\mathbb{I}(V_t=0),
+\qquad
+RR(\tau)=\frac{1}{T}\sum_{t=1}^{T}\mathbb{I}(V_t=-1).
+\]
+它们分别表示有效推进步骤、无实质推进步骤以及明显倒退步骤在整条轨迹中的比例。对于评测集，我们报告它们的宏平均：
+\[
+\overline{PR}=\frac{1}{N}\sum_{i=1}^{N}PR(\tau_i),\quad
+\overline{NPR}=\frac{1}{N}\sum_{i=1}^{N}NPR(\tau_i),\quad
+\overline{RR}=\frac{1}{N}\sum_{i=1}^{N}RR(\tau_i).
+\]
+
+进一步地，设
+\[
+\mathcal{T}_{\mathrm{prog}}(\tau)=\{t\mid V_t=+1\}
+\]
+为轨迹中所有正向推进步骤的索引集合，则轨迹级路径效率定义为
+\[
+PE(\tau)=
+\begin{cases}
+\frac{1}{|\mathcal{T}_{\mathrm{prog}}(\tau)|}\sum_{t\in\mathcal{T}_{\mathrm{prog}}(\tau)} O_t, & |\mathcal{T}_{\mathrm{prog}}(\tau)|>0,\\[6pt]
+\mathrm{N/A}, & |\mathcal{T}_{\mathrm{prog}}(\tau)|=0.
+\end{cases}
+\]
+若有效推进主要发生在高质量主路径上，则 \(PE\) 较高；若推进主要通过绕路获得，则 \(PE\) 较低。
+
+我们将一次\textbf{偏航事件}定义为：路径质量因子首次跌破 \(1.0\) 后，直到恢复到 \(1.0\) 或轨迹结束为止的连续区间。设轨迹中共有 \(N_{\mathrm{dev}}(\tau)\) 次偏航事件，其中成功恢复的事件数为 \(N_{\mathrm{rec}}(\tau)\)，则轨迹级恢复效率定义为
+\[
+RE(\tau)=
+\begin{cases}
+\frac{N_{\mathrm{rec}}(\tau)}{N_{\mathrm{dev}}(\tau)}, & N_{\mathrm{dev}}(\tau)>0,\\[6pt]
+\mathrm{N/A}, & N_{\mathrm{dev}}(\tau)=0.
+\end{cases}
+\]
+
+对于每次成功恢复的偏航事件，记其恢复所需步数为 \(L_k\)。则轨迹级平均恢复代价定义为
+\[
+ARC(\tau)=
+\begin{cases}
+\frac{1}{N_{\mathrm{rec}}(\tau)}\sum_k L_k, & N_{\mathrm{rec}}(\tau)>0,\\[6pt]
+\mathrm{N/A}, & N_{\mathrm{rec}}(\tau)=0.
+\end{cases}
+\]
+
+由于 \(PE\)、\(RE\) 和 \(ARC\) 属于\textbf{条件诊断指标}，它们在某些单条轨迹上可能无定义。因此，在 benchmark 级比较中，我们采用对所有有效事件的\textbf{全局微平均}统计。具体而言，设评测集包含轨迹 \(\{\tau_i\}_{i=1}^{N}\)，则我们报告
+\[
+PE_{\text{micro}}=
+\frac{\sum_{i=1}^{N}\sum_{t\in\mathcal{T}_{\mathrm{prog}}(\tau_i)} O_t}
+{\sum_{i=1}^{N} |\mathcal{T}_{\mathrm{prog}}(\tau_i)|},
+\]
+\[
+RE_{\text{micro}}=
+\frac{\sum_{i=1}^{N} N_{\mathrm{rec}}(\tau_i)}
+{\sum_{i=1}^{N} N_{\mathrm{dev}}(\tau_i)},
+\]
+\[
+ARC_{\text{micro}}=
+\frac{\sum_{i=1}^{N}\sum_k L_k^{(i)}}
+{\sum_{i=1}^{N} N_{\mathrm{rec}}(\tau_i)}.
+\]
+
+在实验中，我们以 \(SR\) 与 \(\overline{TPQ}\) 作为主结果指标，并使用 \(\overline{PR}\)、\(\overline{NPR}\)、\(\overline{RR}\)、\(PE_{\text{micro}}\)、\(RE_{\text{micro}}\) 和 \(ARC_{\text{micro}}\) 作为诊断指标。前者用于比较模型的最终结果与整体过程质量，后者用于解释这些差异究竟来自无进展交互、错误分支坚持，还是恢复成本过高。
+
+\subsection{Step-Level Supervision}
+
+为实现自动化过程评分，我们将轨迹切分为独立的状态转移样本：
+\[
+(G,o_{t-1},a_t,o_t),
+\]
+其中 \(G\) 为任务目标，\(o_{t-1}\) 与 \(o_t\) 分别为动作前后的页面观测，\(a_t\) 为执行动作。
+
+基于第 3 节的过程质量定义，我们为每个状态转移样本构建两类监督信号。第一类是局部推进标签
+\[
+V_t\in\{-1,0,+1\},
+\]
+分别表示倒退、中性与正向推进。第二类是路径质量更新标签
+\[
+y_t\in\{0,1\},
+\]
+其中 \(y_t=1\) 表示当前动作属于高质量推进或有效恢复动作，\(y_t=0\) 表示当前动作属于次优或偏航动作。
+
+这些步骤级标签由人工标注与复核流程构建而成。标注者基于任务目标、动作描述以及动作前后页面观测，对每个状态转移样本判断其局部推进性质与路径质量更新类别。这样的标注方式将复杂轨迹评估拆解为更稳定的步骤级判断，也为后续自动化评分提供了直接监督。
+
+\subsection{Web-PRM}
+
+基于上述步骤级监督，我们训练 \textbf{Web-PRM} 作为自动化过程评分模型。Web-PRM 的输入为
+\[
+(G,o_{t-1},a_t,o_t),
+\]
+输出为对应的局部推进预测 \(\hat V_t\) 与路径质量更新预测 \(\hat y_t\)。
+
+在模型实现上，我们采用一个轻量级开源多模态模型作为基座，并通过监督微调使其根据任务目标、动作描述以及动作前后的页面观测，预测步骤级过程标签。模型输入包括任务目标文本、动作文本、动作前后页面观测，以及必要的压缩页面结构信息。模型的目标不是生成网页动作，而是作为自动化裁判，对状态转移样本进行一致、低成本的步骤级过程评分。
+
+Web-PRM 在本文中的角色是 benchmark 的自动评分基础设施，而不是完美替代人工判断的 oracle。因此，在实验部分，我们将额外报告 Web-PRM 与人工标注之间的一致性，以说明其自动评分能力的可靠性边界。
+
+\subsection{Automatic Scoring}
+
+在评测新的网页智能体时，评测引擎首先记录其完整外显交互轨迹 \(\tau\)，并使用执行式评测器输出最终结果 \(Success\)。
+
+随后，轨迹中的每一步状态转移样本 \((G,o_{t-1},a_t,o_t)\) 被送入 Web-PRM，得到预测标签 \(\hat V_t\) 与 \(\hat y_t\)。在所有实验中，我们固定采用
+\[
+\gamma_{\text{penalty}}=0.5.
+\]
+这一设定意味着每次偏航都会使当前路径质量因子减半，从而在保持定义简洁的同时，对持续偏航施加累积性惩罚。路径质量因子按如下方式递推：
+\[
+\hat O_t=
+\begin{cases}
+1.0, & \hat y_t=1,\\
+0.5\cdot \hat O_{t-1}, & \hat y_t=0.
+\end{cases}
+\]
+当轨迹重新回到高质量推进或有效恢复动作时，路径质量因子恢复为 \(1.0\)。
+
+在此基础上，步骤级过程得分计算为
+\[
+\hat R_t=\hat V_t\cdot \hat O_t,
+\]
+并进一步聚合得到轨迹级过程质量得分
+\[
+\widehat{TPQ}(\tau)=\frac{1}{T}\sum_{t=1}^{T}\hat R_t.
+\]
+
+所有诊断指标也都可以由 \(\{\hat V_t,\hat O_t\}_{t=1}^{T}\) 自动计算得到。因此，Web-PQB 最终能够对每条轨迹同时输出结果级评测与过程级评测，从而统一回答“任务是否完成”以及“该任务是以怎样的过程完成或失败的”这两个问题。
+
+\end{CJK*}
+\end{document}
