@@ -17,7 +17,9 @@ from canonical_data import available_canonical_sources, load_canonical_steps, lo
 # ── 路径配置 ──────────────────────────────────────────────────────────────────
 DATA_DIR = Path("/home/lenovo/code/NIPS2026/data")
 ANNO_DIR = Path("/home/lenovo/code/NIPS2026/annotations")
+PRED_DIR = Path("/home/lenovo/code/NIPS2026/predictions")
 ANNO_DIR.mkdir(exist_ok=True)
+PRED_DIR.mkdir(exist_ok=True)
 GAMMA_PENALTY = 0.5
 
 # ── Demo 数据（无真实数据时使用）────────────────────────────────────────────────
@@ -160,6 +162,108 @@ def get_annotation_y(record: dict | None) -> int | None:
         return 1 if float(legacy_o) == 1.0 else 0
     except Exception:
         return None
+
+
+def available_prediction_files() -> list[Path]:
+    return sorted(PRED_DIR.glob("*.jsonl"))
+
+
+def load_existing_predictions(pred_file: Path) -> dict[str, dict]:
+    result: dict[str, dict] = {}
+    if not pred_file.exists():
+        return result
+
+    with open(pred_file, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = json.loads(line)
+            except Exception:
+                continue
+            step_id = rec.get("step_id")
+            if step_id:
+                result[step_id] = rec
+    return result
+
+
+def get_prediction_v(record: dict | None) -> int | None:
+    if not record:
+        return None
+    value = record.get("pred_V_t", record.get("V_t"))
+    if value is None:
+        return None
+    try:
+        return int(value)
+    except Exception:
+        return None
+
+
+def get_prediction_y(record: dict | None) -> int | None:
+    if not record:
+        return None
+    value = record.get("pred_y_t", record.get("y_t"))
+    if value is None:
+        return None
+    try:
+        return int(value)
+    except Exception:
+        return None
+
+
+def get_prediction_o(record: dict | None) -> float | None:
+    if not record:
+        return None
+    value = record.get("pred_O_t", record.get("O_t"))
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except Exception:
+        return None
+
+
+def get_prediction_r(record: dict | None) -> float | None:
+    if not record:
+        return None
+    value = record.get("pred_R_t", record.get("R_t"))
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except Exception:
+        return None
+
+
+def get_prediction_confidence(record: dict | None) -> float | None:
+    if not record:
+        return None
+    value = record.get("pred_confidence", record.get("confidence"))
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except Exception:
+        return None
+
+
+def get_prediction_rationale(record: dict | None) -> str | None:
+    if not record:
+        return None
+    value = record.get("rationale_short")
+    if value:
+        return str(value)
+    return None
+
+
+def get_prediction_cot(record: dict | None) -> str | None:
+    if not record:
+        return None
+    value = record.get("cot_text")
+    if value:
+        return str(value)
+    return None
 
 
 def build_step_lookup(steps: list[dict]) -> dict[tuple[str, int], str]:
@@ -346,8 +450,12 @@ if "steps" not in st.session_state:
     st.session_state.steps = None
 if "annotations" not in st.session_state:
     st.session_state.annotations = {}
+if "predictions" not in st.session_state:
+    st.session_state.predictions = {}
 if "demo_mode" not in st.session_state:
     st.session_state.demo_mode = False
+if "prediction_file" not in st.session_state:
+    st.session_state.prediction_file = None
 
 # ── 侧边栏 ────────────────────────────────────────────────────────────────────
 with st.sidebar:
@@ -439,6 +547,35 @@ with st.sidebar:
             st.session_state.demo_mode = True
             st.session_state.step_idx = 0
             st.session_state.annotations = load_existing_annotations(anno_file)
+
+    st.divider()
+
+    # 模型建议加载
+    st.subheader("模型建议")
+    pred_files = available_prediction_files()
+    pred_options = ["不加载模型建议"] + [path.name for path in pred_files]
+    current_pred_name = (
+        Path(st.session_state.prediction_file).name
+        if st.session_state.prediction_file
+        else "不加载模型建议"
+    )
+    pred_index = pred_options.index(current_pred_name) if current_pred_name in pred_options else 0
+    selected_pred_name = st.selectbox("选择预测文件", pred_options, index=pred_index)
+
+    if selected_pred_name == "不加载模型建议":
+        st.session_state.prediction_file = None
+        st.session_state.predictions = {}
+        st.caption("当前未加载模型建议。")
+    else:
+        selected_pred_path = PRED_DIR / selected_pred_name
+        st.session_state.prediction_file = str(selected_pred_path)
+        st.session_state.predictions = load_existing_predictions(selected_pred_path)
+        st.caption(
+            f"已加载 {len(st.session_state.predictions)} 条模型建议 "
+            f"→ `{selected_pred_path.name}`"
+        )
+    if not pred_files:
+        st.caption("`predictions/` 目录下还没有 JSONL 预测文件。")
 
     st.divider()
 
@@ -621,10 +758,18 @@ with col_center:
 
     # 检查是否已标注
     existing = st.session_state.annotations.get(step_id)
+    prediction = st.session_state.predictions.get(step_id)
     prev_o, missing_prev_step_id = compute_prev_o(step, st.session_state.annotations, step_lookup)
     existing_v = get_annotation_v(existing)
     existing_y = get_annotation_y(existing)
     existing_o = compute_current_o(prev_o, existing_y) if existing_y is not None and prev_o is not None else None
+    pred_v = get_prediction_v(prediction)
+    pred_y = get_prediction_y(prediction)
+    pred_o = get_prediction_o(prediction)
+    pred_r = get_prediction_r(prediction)
+    pred_conf = get_prediction_confidence(prediction)
+    pred_rationale = get_prediction_rationale(prediction)
+    pred_cot = get_prediction_cot(prediction)
     if existing:
         st.markdown(
             f'<span class="badge-done">✅ 已标注</span> &nbsp; '
@@ -636,8 +781,30 @@ with col_center:
         default_v = str(existing_v) if existing_v is not None else None
         default_y = str(existing_y) if existing_y is not None else None
     else:
-        default_v = None
-        default_y = None
+        default_v = str(pred_v) if pred_v is not None else None
+        default_y = str(pred_y) if pred_y is not None else None
+
+    if prediction:
+        model_name = prediction.get("model_name", "unknown-model")
+        status_parts = [f"模型: `{model_name}`"]
+        if pred_conf is not None:
+            status_parts.append(f"置信度: {pred_conf:.2f}")
+        if pred_v is not None:
+            status_parts.append(f"建议 V={pred_v:+d}")
+        if pred_y is not None:
+            status_parts.append(f"建议 y={pred_y}")
+        if pred_o is not None:
+            status_parts.append(f"预测 O={pred_o:.3f}")
+        if pred_r is not None:
+            status_parts.append(f"预测 R={pred_r:+.3f}")
+
+        st.markdown("**🤖 模型建议**")
+        st.info(" | ".join(status_parts))
+        if pred_rationale:
+            st.caption(f"短解释: {pred_rationale}")
+        if pred_cot:
+            with st.expander("查看模型 CoT 解释", expanded=False):
+                st.write(pred_cot)
 
     # V_t 选择
     st.markdown("**第一题：V_t（这步推进了吗？）**")
@@ -699,6 +866,18 @@ with col_center:
     with col_sub:
         submit_disabled = (v_num is None or y_num is None or current_o is None)
         if st.button("✅ 提交 [Enter]", disabled=submit_disabled, type="primary", use_container_width=True):
+            accepted_without_change = (
+                prediction is not None
+                and pred_v is not None
+                and pred_y is not None
+                and pred_v == v_num
+                and pred_y == y_num
+            )
+            prediction_status = (
+                "accepted"
+                if accepted_without_change
+                else ("edited" if prediction is not None else "none")
+            )
             record = {
                 "step_id": step_id,
                 "task_id": step.get("task_id", ""),
@@ -713,6 +892,17 @@ with col_center:
                 "O_t": current_o,
                 "R_t": current_r,
                 "note": note,
+                "prediction_file": Path(st.session_state.prediction_file).name if st.session_state.prediction_file else None,
+                "prediction_model": prediction.get("model_name") if prediction else None,
+                "pred_V_t": pred_v,
+                "pred_y_t": pred_y,
+                "pred_O_t": pred_o,
+                "pred_R_t": pred_r,
+                "pred_confidence": pred_conf,
+                "pred_rationale_short": pred_rationale,
+                "pred_cot_text": pred_cot,
+                "accepted_without_change": accepted_without_change,
+                "prediction_status": prediction_status,
                 "timestamp": datetime.now().isoformat(),
             }
             st.session_state.annotations[step_id] = record
@@ -743,6 +933,17 @@ with col_center:
                 "O_t": None,
                 "R_t": None,
                 "note": "SKIPPED",
+                "prediction_file": Path(st.session_state.prediction_file).name if st.session_state.prediction_file else None,
+                "prediction_model": prediction.get("model_name") if prediction else None,
+                "pred_V_t": pred_v,
+                "pred_y_t": pred_y,
+                "pred_O_t": pred_o,
+                "pred_R_t": pred_r,
+                "pred_confidence": pred_conf,
+                "pred_rationale_short": pred_rationale,
+                "pred_cot_text": pred_cot,
+                "accepted_without_change": None,
+                "prediction_status": "skipped",
                 "timestamp": datetime.now().isoformat(),
             }
             st.session_state.annotations[step_id] = record
@@ -803,6 +1004,8 @@ with st.expander("📊 标注历史（最近 20 条）", expanded=False):
                 "y_t": r.get("y_t"),
                 "O_t": r["O_t"],
                 "R_t": r["R_t"],
+                "建议状态": r.get("prediction_status", ""),
+                "直接接受": r.get("accepted_without_change"),
                 "备注": r.get("note", ""),
                 "时间": r["timestamp"][:19],
             })
