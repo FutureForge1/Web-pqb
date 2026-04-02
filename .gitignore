@@ -17,6 +17,9 @@ downloads/
 data/*
 !data/benchmark_tasks/
 !data/benchmark_tasks/**
+!data/benchmark_tasks_v2/
+data/benchmark_tasks_v2/*
+!data/benchmark_tasks_v2/README.md
 !data/canonical/
 data/canonical/*
 !data/canonical/README.md
