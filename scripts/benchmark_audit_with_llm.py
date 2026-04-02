@@ -53,6 +53,14 @@ Guidelines:
 - recovery means the wrong start is wrong-but-recoverable and recovery itself is a meaningful challenge.
 - Prefer "revise" instead of "drop" when the core idea is good but the setup is weak.
 - Use "unsure" when the task config alone is insufficient.
+- This is a text-only pre-audit. If the task references an image, screenshot, or visual evidence that is not included here, do not mark the task invalid solely for that omission.
+- When visual context is missing, prefer:
+  - visual_dependence = "high"
+  - category_correct = "unsure" instead of "no" unless the mismatch is obvious
+  - task_solvable = "unsure" instead of "no" unless the task is clearly impossible or contradictory
+  - evaluator_reliable = "unsure" instead of "no" unless the evaluation logic is clearly broken from the metadata
+  - keep_or_drop = "revise" instead of "drop" unless the task is clearly unusable
+- For multi_path on listing/search sites, tasks involving browse/search/filter/sort among many candidate items often count as "yes" or "unsure"; reserve "no" for clearly single-hop lookup tasks.
 
 Return JSON only.
 Do not use markdown fences.

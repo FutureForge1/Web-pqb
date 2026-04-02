@@ -49,6 +49,15 @@ Guidelines:
 - For recovery tasks, judge whether the visible state seems likely to mislead an agent.
 - If the screenshot is insufficient, use "unsure" or "unavailable".
 - Do not rewrite the whole task; suggest revision only when visual evidence contradicts the current benchmark label.
+- This is a visual re-audit, not the final benchmark decision.
+- Prefer "no_change" when the screenshot provides only weak or indirect evidence.
+- Prefer "revise" over "drop" unless the visual evidence clearly shows the task setup is unusable.
+- Do not overturn the text audit solely because the screenshot is incomplete, from a different but related trajectory, or missing critical context.
+
+Return JSON only.
+Do not use markdown fences.
+Do not output any text before or after the JSON object.
+Your response must begin with "{" and end with "}".
 """
 
 
@@ -107,6 +116,7 @@ def load_text_audit(path: Path) -> dict[str, dict[str, Any]]:
 
 def extract_json(text: str) -> dict[str, Any]:
     text = text.strip()
+    text = strip_think_blocks(text)
     if text.startswith("```"):
         lines = text.splitlines()
         if len(lines) >= 3:
@@ -133,6 +143,16 @@ def norm_confidence(value: Any) -> float | None:
     except Exception:
         return None
     return max(0.0, min(1.0, score))
+
+
+def strip_think_blocks(text: str) -> str:
+    while "<think>" in text and "</think>" in text:
+        start = text.find("<think>")
+        end = text.find("</think>", start)
+        if end == -1:
+            break
+        text = text[:start] + text[end + len("</think>") :]
+    return text.strip()
 
 
 def task_render_member(task: dict[str, Any]) -> str | None:
@@ -244,8 +264,21 @@ def build_user_prompt(task: dict[str, Any], text_rec: dict[str, Any], screenshot
                 "Use the screenshot only as supporting context, not as the sole basis for judging recovery validity.",
             ]
         )
-    lines.append("")
-    lines.append("Return JSON only.")
+    lines.extend(
+        [
+            "",
+            "Return one JSON object only. Example format:",
+            "{",
+            '  "visual_dependence_reaudit": "high",',
+            '  "distraction_visible_reaudit": "yes",',
+            '  "recovery_visual_mislead": "n/a",',
+            '  "keep_or_drop_revision": "no_change",',
+            '  "confidence": 0.78,',
+            '  "rationale_short": "Short explanation grounded in the visible screenshot.",',
+            '  "cot_text": "Brief reasoning trace."',
+            "}",
+        ]
+    )
     return "\n".join(lines)
 
 
@@ -286,7 +319,7 @@ class VLMJudge:
             local_files_only=args.local_files_only,
         )
 
-    def generate(self, task: dict[str, Any], text_rec: dict[str, Any], image: Image.Image | None) -> tuple[dict[str, Any], str]:
+    def generate_raw(self, task: dict[str, Any], text_rec: dict[str, Any], image: Image.Image | None) -> str:
         content: list[dict[str, Any]] = []
         if image is not None:
             content.append({"type": "image", "image": image})
@@ -326,8 +359,7 @@ class VLMJudge:
             skip_special_tokens=True,
             clean_up_tokenization_spaces=False,
         )[0]
-        parsed = extract_json(raw_text)
-        return parsed, raw_text
+        return raw_text
 
 
 def load_existing_predictions(path: Path) -> set[str]:
@@ -381,8 +413,10 @@ def main() -> None:
             continue
         text_rec = text_audit.get(benchmark_id, {})
         image = load_task_image(args.render_tar, task)
+        raw_text = None
         try:
-            parsed, raw_text = judge.generate(task, text_rec, image)
+            raw_text = judge.generate_raw(task, text_rec, image)
+            parsed = extract_json(raw_text)
             record = {
                 "benchmark_id": benchmark_id,
                 "category": task.get("category"),
@@ -427,6 +461,7 @@ def main() -> None:
                 "screenshot_available": image is not None,
                 "parse_ok": False,
                 "error": repr(exc),
+                "raw_response": raw_text,
                 "timestamp": datetime.now().isoformat(),
             }
         write_jsonl(output_path, record)
