@@ -55,6 +55,9 @@ Guidelines:
 - Use "unsure" when the task config alone is insufficient.
 
 Return JSON only.
+Do not use markdown fences.
+Do not output any text before or after the JSON object.
+Your response must begin with "{" and end with "}".
 """
 
 
@@ -74,6 +77,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--local-files-only", action="store_true")
     parser.add_argument("--trust-remote-code", action="store_true")
     parser.add_argument(
+        "--enable-thinking",
+        action="store_true",
+        help="Enable Qwen3 thinking mode. Disabled by default for more stable JSON output.",
+    )
+    parser.add_argument(
         "--merged-csv",
         default="",
         help="Optional output CSV that merges original benchmark rows with llm_* columns.",
@@ -90,6 +98,7 @@ def load_benchmark(path: Path) -> list[dict[str, Any]]:
 
 def extract_json(text: str) -> dict[str, Any]:
     text = text.strip()
+    text = strip_think_blocks(text)
     if text.startswith("```"):
         lines = text.splitlines()
         if len(lines) >= 3:
@@ -118,6 +127,16 @@ def norm_confidence(value: Any) -> float | None:
     return max(0.0, min(1.0, score))
 
 
+def strip_think_blocks(text: str) -> str:
+    while "<think>" in text and "</think>" in text:
+        start = text.find("<think>")
+        end = text.find("</think>", start)
+        if end == -1:
+            break
+        text = text[:start] + text[end + len("</think>") :]
+    return text.strip()
+
+
 def build_user_prompt(task: dict[str, Any]) -> str:
     eval_cfg = task.get("eval", {}) or {}
     lines = [
@@ -141,6 +160,28 @@ def build_user_prompt(task: dict[str, Any]) -> str:
     ]
     if task.get("construction_note"):
         lines.extend(["", "construction_note:", str(task["construction_note"])])
+    lines.extend(
+        [
+            "",
+            "Return one JSON object only. Example format:",
+            '{',
+            '  "keep_or_drop": "keep",',
+            '  "category_correct": "yes",',
+            '  "multi_path_confirmed": "yes",',
+            '  "distraction_visible": "n/a",',
+            '  "recovery_setup_valid": "n/a",',
+            '  "recovery_severity": "n/a",',
+            '  "task_solvable": "yes",',
+            '  "evaluator_reliable": "yes",',
+            '  "duplicate_or_near_duplicate": "no",',
+            '  "visual_dependence": "high",',
+            '  "site_balance_priority": "medium",',
+            '  "confidence": 0.82,',
+            '  "rationale_short": "Short explanation.",',
+            '  "cot_text": "Brief reasoning trace."',
+            '}',
+        ]
+    )
     return "\n".join(lines)
 
 
@@ -188,17 +229,28 @@ class TextJudge:
             local_files_only=args.local_files_only,
         )
 
-    def generate(self, task: dict[str, Any]) -> tuple[dict[str, Any], str]:
+    def generate_raw(self, task: dict[str, Any]) -> str:
         messages = [
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": build_user_prompt(task)},
+            {
+                "role": "user",
+                "content": build_user_prompt(task) + ("" if self.args.enable_thinking else "\n\n/no_think"),
+            },
         ]
         if hasattr(self.tokenizer, "apply_chat_template"):
-            prompt = self.tokenizer.apply_chat_template(
-                messages,
-                tokenize=False,
-                add_generation_prompt=True,
-            )
+            try:
+                prompt = self.tokenizer.apply_chat_template(
+                    messages,
+                    tokenize=False,
+                    add_generation_prompt=True,
+                    enable_thinking=self.args.enable_thinking,
+                )
+            except TypeError:
+                prompt = self.tokenizer.apply_chat_template(
+                    messages,
+                    tokenize=False,
+                    add_generation_prompt=True,
+                )
         else:
             prompt = SYSTEM_PROMPT + "\n\n" + build_user_prompt(task)
 
@@ -212,8 +264,7 @@ class TextJudge:
         )
         output_ids = generated[0][model_inputs.input_ids.shape[1] :]
         raw_text = self.tokenizer.decode(output_ids, skip_special_tokens=True)
-        parsed = extract_json(raw_text)
-        return parsed, raw_text
+        return raw_text
 
 
 def normalize_record(task: dict[str, Any], parsed: dict[str, Any], raw_text: str, model_name: str) -> dict[str, Any]:
@@ -274,6 +325,9 @@ def write_merged_csv(path: Path, benchmark: list[dict[str, Any]], prediction_pat
 
 def main() -> None:
     args = parse_args()
+    if not args.enable_thinking and args.temperature == 0.0:
+        args.temperature = 0.7
+        args.top_p = 0.8
     benchmark = load_benchmark(Path(args.input))
     if args.start_index:
         benchmark = benchmark[args.start_index :]
@@ -292,8 +346,10 @@ def main() -> None:
         benchmark_id = str(task.get("benchmark_id"))
         if benchmark_id in done_ids:
             continue
+        raw_text = None
         try:
-            parsed, raw_text = judge.generate(task)
+            raw_text = judge.generate_raw(task)
+            parsed = extract_json(raw_text)
             record = normalize_record(task, parsed, raw_text, model_name)
         except Exception as exc:
             record = {
@@ -304,6 +360,7 @@ def main() -> None:
                 "model_name": model_name,
                 "parse_ok": False,
                 "error": repr(exc),
+                "raw_response": raw_text,
                 "timestamp": datetime.now().isoformat(),
             }
         write_jsonl(output_path, record)
