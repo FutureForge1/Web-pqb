@@ -1,0 +1,4466 @@
+[
+  {
+    "task_id": "recovery_6",
+    "source_task_id": 6,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Search for 'Nike slide slippers'. List the full product names of red ones on the first page and tell me the price range of the available products",
+    "intent_template": "{{modifier}}List the full product names of {{color}} {{product}} and tell me the price range of the available products",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Nike Men's Air Max Camden Slide Sandal",
+          "Nike Men's Benassi JDI Fanny Pack Slides",
+          "Nike Offcourt Slide Mens Bq4639-002 Size 12",
+          "Nike Jordan Men's Break Slide Red AR6374-602",
+          "42.81",
+          "69.00"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "These models are availiable: Nike Men's Air Max Camden Slide Sandal, Nike Men's Benassi JDI Fanny Pack Slides, Nike Offcourt Slide Mens Bq4639-002 Size 12, Nike Jordan Men's Break Slide Red AR6374-602. The price ranges from $42.81 to $69.00"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_7",
+    "source_task_id": 7,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Search for 'pencil case'. List the full product names of those with animal designs on the first page and tell me the price range of the available products",
+    "intent_template": "{{modifier}}List the full product names of {{color}} {{product}} and tell me the price range of the available products",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Cosmetic Bag Leather Pencil Case,Cosmetic Bag Leather Pencil Case,Two Wolves,Portable Small Makeup Bags Travel bag Multifunctional Pen Holder Box with Zipper for Women Girls Lady Teens",
+          "Danielle Cute Boston Terrier, Frenchie, French Bulldog Portable Pencil Case, Cosmetic Travel Organizer Bag | 9x3x3 in",
+          "Dinosaur Pattern Travel Bag Large Toiletries Bag Cosmetic Pouch Pencil Case Tote Multifunction Organizer Storage Bag",
+          "Leopard Paw Cosmetic Bag Pink Makeup Bag for Girls Women Portable Travel Pencil Case Water-resistant Organizer Birthday Christmas Gift",
+          "5.99",
+          "38.67"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_86",
+    "source_task_id": 86,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add all the items I need to make this to my shopping cart.",
+    "intent_template": "Add all the items I need to make this to my shopping cart.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "wrong_start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "hot dog",
+              "roll |OR| rolls |OR| bun"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/electronics/video-projectors.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_87",
+    "source_task_id": 87,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add all the items I need to make this to my shopping cart.",
+    "intent_template": "Add all the items I need to make this to my shopping cart.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "hot dog",
+              "roll |OR| rolls |OR| bun",
+              "mustard"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_89",
+    "source_task_id": 89,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add something like the thing at the top of this image to my shopping cart.",
+    "intent_template": "Add something like the {{item}} to my shopping cart.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "hair brush"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_107",
+    "source_task_id": 107,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "I need something to store the item on the right. Add one to my shopping cart.",
+    "intent_template": "I need something to store {{item}}. Add one to my shopping cart.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html",
+    "wrong_start_url": "http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "microwave",
+              "storage |OR| shelf |OR| rack"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_110",
+    "source_task_id": 110,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my shopping cart. I think it is in the \"Smartwatch Accessories\" category.",
+    "intent_template": "Add this exact product to my shopping cart. I think it is in the \"{{category}}\" category.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Fullmosa Compatible with Apple Watch Band 44mm with Bumper Case, Rugged iWatch Band with Screen Protector Only for Apple Watch Series 6/5/4/SE, Orange"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_111",
+    "source_task_id": 111,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my shopping cart. I think it is in the \"Herbs, Spices & Seasonings\" category.",
+    "intent_template": "Add this exact product to my shopping cart. I think it is in the \"{{category}}\" category.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "wrong_start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Lawry's Chipotle Cinnamon Rub, 27 oz - One 27 Ounce Container of Chipotle Cinnamon Rub Made of Chipotle Chili Pepper, Cinnamon, and Paprika Perfect for Burgers, Pork, Chicken, and Vegetables"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_112",
+    "source_task_id": 112,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my shopping cart. I think it is in the \"Dining & Entertaining\" category.",
+    "intent_template": "Add this exact product to my shopping cart. I think it is in the \"{{category}}\" category.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Reston Lloyd Plastic Tumbler Corelle Coordinates, Timber Shadows, 8oz Acrylic Drinkware, Set of 6, Juice, Clear"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_113",
+    "source_task_id": 113,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my shopping cart. I think it is in the \"Women Accessories\" category.",
+    "intent_template": "Add this exact product to my shopping cart. I think it is in the \"{{category}}\" category.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3",
+    "wrong_start_url": "http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Set of 2 Mesh Laundry Bags Cute Orange Cat-1 Medium & 1 Small Bags Laundry,Blouse, Hosiery, Stocking, Underwear, Bra Lingerie, Travel Laundry Bag(8rp9k)"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_114",
+    "source_task_id": 114,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my shopping cart. I think it is in the \"Makeup\" category.",
+    "intent_template": "Add this exact product to my shopping cart. I think it is in the \"{{category}}\" category.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Petansy 3 Packs Aloe Vera Lipstick , Lips Moisturizer Long Lasting Nutritious Lip Balm Magic Temperature Color Change Lip Gloss-Set(A)"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/wall-art/posters-prints.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_115",
+    "source_task_id": 115,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my shopping cart. I think it is in the \"Patio Furniture & Accessories\" category.",
+    "intent_template": "Add this exact product to my shopping cart. I think it is in the \"{{category}}\" category.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Modway EEI-2923-GRY-GRY Aura Outdoor Patio Wicker Rattan Sofa Gray"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_116",
+    "source_task_id": 116,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my wish list. I think it might be in the \"PlayStation 4\" category but I'm not certain.",
+    "intent_template": "Add this exact product to my wish list. I think it might be in the \"{{category}}\" category but I'm not certain.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/wishlist/?limit=50",
+          "locator": "document.querySelector('.products-grid.wishlist').textContent",
+          "required_contents": {
+            "must_include": [
+              "Nintendo Switch Pro Controller Xenoblade 2 Edition (Japan Import)"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_117",
+    "source_task_id": 117,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my wish list. I think it might be in the \"Office Furniture & Lighting > Chairs & Sofas\" category but I'm not certain.",
+    "intent_template": "Add this exact product to my wish list. I think it might be in the \"{{category}}\" category but I'm not certain.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/wishlist/?limit=50",
+          "locator": "document.querySelector('.products-grid.wishlist').textContent",
+          "required_contents": {
+            "must_include": [
+              "Flash Furniture Low Back Designer Armless White Ribbed Swivel Task Office Chair"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_118",
+    "source_task_id": 118,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my wish list. I think it might be in the \"Men > Clothing\" category but I'm not certain.",
+    "intent_template": "Add this exact product to my wish list. I think it might be in the \"{{category}}\" category but I'm not certain.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/wishlist/?limit=50",
+          "locator": "document.querySelector('.products-grid.wishlist').textContent",
+          "required_contents": {
+            "must_include": [
+              "INTIMO Elf The Movie Men's Cotton Headed Ninny Muggins Allover Holiday Christmas Film Loungewear Pajama Pants"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_119",
+    "source_task_id": 119,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my wish list. I think it might be in the \"Home Décor Products\" category but I'm not certain.",
+    "intent_template": "Add this exact product to my wish list. I think it might be in the \"{{category}}\" category but I'm not certain.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/wishlist/?limit=50",
+          "locator": "document.querySelector('.products-grid.wishlist').textContent",
+          "required_contents": {
+            "must_include": [
+              "ELUZE 4-Light Bathroom Vanity Light Black Vintage Bathroom Lighting with Clear Glass Shades Wall Sconce Lighting Fixtures for Bathroom Kitchen Hallway"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_120",
+    "source_task_id": 120,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Add this exact product to my wish list. I think it might be in the \"Home Décor Products\" category but I'm not certain.",
+    "intent_template": "Add this exact product to my wish list. I think it might be in the \"{{category}}\" category but I'm not certain.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "wrong_start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/wishlist/?limit=50",
+          "locator": "document.querySelector('.products-grid.wishlist').textContent",
+          "required_contents": {
+            "must_include": [
+              "Dutsekk LED Bathroom Mirror Anti-Fog - 36x28 Inch Dimmable IP44 Waterproof Bathroom Mirror with Lights - Lighted Bathroom Vanity Mirror for Wall with CCT Adjustable for Makeup"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_121",
+    "source_task_id": 121,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "intent_template": "Tell me how much this exact item costs on OneStopMarket.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3",
+    "wrong_start_url": "http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "501.25"
+        ]
+      },
+      "reference_url": "http://localhost:7770/sandisk-extreme-pro-512-gb-cfast-card-model-sdcfsp-512g-a46d.html",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "$501.25"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_122",
+    "source_task_id": 122,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "intent_template": "Tell me how much this exact item costs on OneStopMarket.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "126.65"
+        ]
+      },
+      "reference_url": "http://localhost:7770/martha-stewart-herbal-botany-wall-art-living-room-decor-floral-linen-canvas-home-accent-country-lifestyle-bathroom-decoration-ready-to-hang-poster-painting-for-bedroom-17-84-x-21-84-green.html",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "$126.65"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_123",
+    "source_task_id": 123,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "intent_template": "Tell me how much this exact item costs on OneStopMarket.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "wrong_start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "328.77"
+        ]
+      },
+      "reference_url": "http://localhost:7770/skyinbags-hand-painted-abstract-plant-tree-oil-painting-on-canvas-large-picture-wall-artwork-modern-art-poster-decoration-for-corridor-live-room-home-decor-gift-90x130cm-unframed9.html",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "$328.77"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_124",
+    "source_task_id": 124,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "intent_template": "Tell me how much this exact item costs on OneStopMarket.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "645.00"
+        ]
+      },
+      "reference_url": "http://localhost:7770/nec-np4100-6200-lumen-xga-dlp-projector.html",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "$645.00"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_125",
+    "source_task_id": 125,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "intent_template": "Tell me how much this exact item costs on OneStopMarket.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "wrong_start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "This exact item is not available on OneStopMarket.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_126",
+    "source_task_id": 126,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "intent_template": "Tell me how much this exact item costs on OneStopMarket.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "This exact item does is not available on OneStopMarket.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/wall-art/posters-prints.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_137",
+    "source_task_id": 137,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Return an image link of the cheapest Canon printer from the \"Printers & Accessories\" category which shows it printing something.",
+    "intent_template": "Return an image link of {{item}}.",
+    "original_start_url": "http://localhost:7770/",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "B005TI2Q6O.0.jpg"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "http://localhost:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B005TI2Q6O.0.jpg"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_150",
+    "source_task_id": 150,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+    "intent_template": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/home-kitchen/home-decor-products/artificial-plants-flowers.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/home-decor-products/artificial-plants-flowers.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/sales/order/view/order_id/161/",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/home-kitchen/home-decor-products/artificial-plants-flowers.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_151",
+    "source_task_id": 151,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+    "intent_template": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3",
+    "wrong_start_url": "http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/sales/order/view/order_id/157/",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_152",
+    "source_task_id": 152,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+    "intent_template": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "wrong_start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/sales/order/view/order_id/165/",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/electronics/video-projectors.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_155",
+    "source_task_id": 155,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Find me a set of headphones of the same brand as the product in this picture. It needs to be silver colored and have at least 10 reviews with an average rating greater than 4.",
+    "intent_template": "Find me {{category}} of the same brand as the product in this picture. It needs to {{description}}.",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/sony-wh1000xm3-bluetooth-wireless-noise-canceling-headphones-silver-wh-1000xm3-s-renewed.html |OR| http://localhost:7770/sony-h900n-hi-res-noise-cancelling-wireless-headphone-grayish-black-renewed.html |OR| http://localhost:7770/sony-mdrx10-red-simon-cowell-x-headphones-with-50mm-diaphragms.html",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_156",
+    "source_task_id": 156,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Find me a printer of the same brand as the product in this picture. It needs to be white and have at least 11 reviews with an average rating greater than 4.",
+    "intent_template": "Find me {{category}} of the same brand as the product in this picture. It needs to {{description}}.",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html",
+    "wrong_start_url": "http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/hp-deskjet-f380-all-in-one-printer-scanner-copier.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_157",
+    "source_task_id": 157,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Find me protein bars of the same brand as the product in this picture. It needs to have price between $30 and $50.",
+    "intent_template": "Find me {{category}} of the same brand as the product in this picture. It needs to {{description}}.",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/kellogg-s-special-k-protein-bars-meal-replacement-protein-snacks-value-size-chocolatey-chip-cookie-dough-19oz-box-12-bars.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/home-kitchen/wall-art/posters-prints.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_158",
+    "source_task_id": 158,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Find me a digital camera that is of the same brand as products in one of the following pictures. It needs to be black and have at least 12 reviews. Furthermore, it cannot be too expensive - it needs to have price less than $700.",
+    "intent_template": "Find me {{category}} that is of the same brand as products in one of the following pictures. It needs to {{description}}.",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:shopping_get_num_reviews(__page__)",
+          "required_contents": {
+            "required_values": [
+              ">= 12"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_price(__page__)",
+          "required_contents": {
+            "required_values": [
+              "< 700"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_attributes(__page__, 'manufacturer |OR| brand name')",
+          "required_contents": {
+            "must_include": [
+              "Olympus |OR| Nikon"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".fotorama__stage__frame",
+          "eval_vqa": [
+            {
+              "question": "Is this a digital camera? (yes/no)",
+              "answer": "yes"
+            },
+            {
+              "question": "Is the color of the product black? (yes/no)",
+              "answer": "yes"
+            }
+          ]
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_164",
+    "source_task_id": 164,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Find me a television that is of the same brand as products in one of the following pictures. It needs to have price at least $600.",
+    "intent_template": "Find me {{category}} that is of the same brand as products in one of the following pictures. It needs to {{description}}.",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "wrong_start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_price(__page__)",
+          "required_contents": {
+            "required_values": [
+              ">= 600"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_attributes(__page__, 'brand name |OR| manufacturer')",
+          "required_contents": {
+            "must_include": [
+              "LG |OR| SAMSUNG"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".fotorama__stage__frame",
+          "eval_vqa": [
+            {
+              "question": "Is this a television? (yes/no)",
+              "answer": "yes"
+            }
+          ]
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/electronics/video-projectors.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_165",
+    "source_task_id": 165,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Find me a men's tennis shoe that is of the same brand as products in one of the following pictures. It needs to have price between $60 and $120 with at least 11 reviews.",
+    "intent_template": "Find me {{category}} that is of the same brand as products in one of the following pictures. It needs to {{description}}.",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html",
+    "wrong_start_url": "http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_price(__page__)",
+          "required_contents": {
+            "required_values": [
+              ">= 60",
+              "<= 120"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:shopping_get_num_reviews(__page__)",
+          "required_contents": {
+            "required_values": [
+              ">= 11"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_attributes(__page__, 'manufacturer |OR| brand name')",
+          "required_contents": {
+            "must_include": [
+              "Asics |OR| Nike"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "Men",
+              "Tennis Shoe"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_166",
+    "source_task_id": 166,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Find me a shoe that is designed for the sport depicted in the first picture and has the same brand as products in the second picture. It needs to have the same color as the flower in the third picture.",
+    "intent_template": "Find me {{category}} that {{relation1}} first picture and has {{relation2}} second picture. It needs to have {{relation3}} third picture.",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_attributes(__page__, 'manufacturer |OR| brand name')",
+          "required_contents": {
+            "must_include": [
+              "adidas"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "Basketball",
+              "Sneaker |OR| Shoe"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".fotorama__stage__frame",
+          "eval_vqa": [
+            {
+              "question": "Is the shoe red? (yes/no)",
+              "answer": "yes"
+            }
+          ]
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_167",
+    "source_task_id": 167,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Find me a shoe that is designed for the sport depicted in the first picture and has the same brand as products in the second picture. It needs to have the same color as the third picture.",
+    "intent_template": "Find me {{category}} that {{relation1}} first picture and has {{relation2}} second picture. It needs to have {{relation3}} third picture.",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "Such an item is not available on OneStopMarket.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_169",
+    "source_task_id": 169,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Can you find me a product that combines the functions of the items in the following images?",
+    "intent_template": "Can you find me {{category}} that combines the {{attribute}} of the items in the following images?",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "Clock",
+              "Camera"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_170",
+    "source_task_id": 170,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Can you find me a product that combines the functions of the items in the following images?",
+    "intent_template": "Can you find me {{category}} that combines the {{attributes}} of the items in the following images?",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "Projection Keyboard"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_171",
+    "source_task_id": 171,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Can you find me a taiwanese snack that combines the flavors of the items in the following images?",
+    "intent_template": "Can you find me {{category}} that combines the {{attributes}} of the items in the following images?",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "SUNNY HILLS Pineapple Cake"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/home-kitchen/wall-art/posters-prints.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_174",
+    "source_task_id": 174,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Can you find me a product that combines the functions of the items in the following images and buy it for me?",
+    "intent_template": "Can you find me {{category}} that combines the {{attributes}} of the items in the following images and buy it for me?",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector('.order-details-items.ordered').outerText",
+          "required_contents": {
+            "must_include": [
+              "roller skate"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_175",
+    "source_task_id": 175,
+    "site": "shopping",
+    "sites": [
+      "shopping"
+    ],
+    "intent": "Find me a wireless white game controller that is of the same brand as the product in this picture and buy it for me. It needs to have at 10 reviews and be priced between $110-$120.",
+    "intent_template": "Find me {{category}} that is of the same brand as the product in this picture and buy {{quantity}} for me. It needs to {{description}}.",
+    "original_start_url": "http://localhost:7770",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector('.order-details-items.ordered').outerText",
+          "required_contents": {
+            "must_include": [
+              "B07P3L5GMW"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_4",
+    "source_task_id": 4,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Navigate to my listing of the white car and change the price to $25000. Update the price in the description as well.",
+    "intent_template": "Navigate to my listing {{item}} and {{action}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84144",
+          "locator": "func:get_query_text(__page__, '.price')",
+          "required_contents": {
+            "must_include": [
+              "25000.00"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84144",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_include": [
+              "$25000 |OR| $25,000"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84144",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_exclude": [
+              "30000",
+              "30,000"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_8",
+    "source_task_id": 8,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Help me make a post selling this item and navigate to it. Price it at $10 cheaper than the most similar item on the site between $250-300 (of the same color). If there are multiple similar items, use the most recent posting.",
+    "intent_template": "Help me make a post selling this item and navigate to it. Price it at $10 cheaper than the most similar item on the site {{range}} (of the same color). If there are multiple similar items, use the most recent posting.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.price')",
+          "required_contents": {
+            "must_include": [
+              "270.00"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".item-photos",
+          "eval_fuzzy_image_match": "https://images.pexels.com/photos/6869207/pexels-photo-6869207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_9",
+    "source_task_id": 9,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Help me make a post selling this item and navigate to it. Price it at $10 cheaper than the most similar item on the site between $750-800 (of the same color). If there are multiple similar items, use the most recent posting.",
+    "intent_template": "Help me make a post selling this item and navigate to it. Price it at $10 cheaper than the most similar item on the site {{range}} (of the same color). If there are multiple similar items, use the most recent posting.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.price')",
+          "required_contents": {
+            "must_include": [
+              "785.00"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".item-photos",
+          "eval_fuzzy_image_match": "http://localhost:9980/oc-content/uploads/42906/42906.png"
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=16826'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_27",
+    "source_task_id": 27,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "How many of the listings in \"Rvs + campers\" posted on 16th November 2023 show the interior of the car?",
+    "intent_template": "How many {{item}} {{criteria}}?",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3 |OR| three"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_28",
+    "source_task_id": 28,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Add a comment on the most recently posted painting of a bridge with the title \"Question\" and text \"When did you acquire it?\".",
+    "intent_template": "Add a comment on the {{item}} with the title \"{{title}}\" and text \"{{comment}}\".",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=12085",
+          "locator": "func:get_query_text(__page__, '.comments_list h3')",
+          "required_contents": {
+            "must_include": [
+              "Question by Blake Sullivan"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=12085",
+          "locator": "func:get_query_text(__page__, '.comments_list')",
+          "required_contents": {
+            "must_include": [
+              "When did you acquire it?"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_34",
+    "source_task_id": 34,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Search for \"painting\" and return the links of the most recent three items that feature animals.",
+    "intent_template": "Search for \"{{phrase}}\"{{detail}} and return the links of {{target}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "http://localhost:9980/index.php?page=item&id=14761",
+          "http://localhost:9980/index.php?page=item&id=32385",
+          "http://localhost:9980/index.php?page=item&id=47173"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_35",
+    "source_task_id": 35,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Search for \"loveseat\" in the Furniture category and return the links of the most recent two items that are not black or gray.",
+    "intent_template": "Search for \"{{phrase}}\"{{detail}} and return the links of {{target}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "http://localhost:9980/index.php?page=item&id=33441",
+          "http://localhost:9980/index.php?page=item&id=42263"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=74603'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_36",
+    "source_task_id": 36,
+    "site": "classifieds",
+    "sites": [
+      "classifieds",
+      "shopping"
+    ],
+    "intent": "Find all listings for this exact item on OSClass and compare its price to the cheapest listing on OneStopMarket. Return the link of the cheaper item.",
+    "intent_template": "Find all listings for this exact item on OSClass and compare its price to the cheapest listing on OneStopMarket. Return the link of {{target}}.",
+    "original_start_url": "http://localhost:9980 |AND| http://localhost:7770",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "http://localhost:7770/luigi-s-mansion-3-nintendo-switch.html"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980 |AND| http://localhost:7770'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=10&iPage=8'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_37",
+    "source_task_id": 37,
+    "site": "classifieds",
+    "sites": [
+      "classifieds",
+      "shopping"
+    ],
+    "intent": "Find all listings for this exact item on OSClass and compare its price to the cheapest listing on OneStopMarket. Return the link of the cheapest item on both sites.",
+    "intent_template": "Find all listings for this exact item on OSClass and compare its price to the cheapest listing on OneStopMarket. Return the link of {{target}}.",
+    "original_start_url": "http://localhost:9980 |AND| http://localhost:7770",
+    "start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "http://localhost:7770/nintendo-switch-w-neon-blue-neon-red-joy-con-mario-kart-8-deluxe-full-game-download-switch.html",
+          "http://localhost:9980/index.php?page=item&id=59435"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980 |AND| http://localhost:7770'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=16826'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_38",
+    "source_task_id": 38,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the three most recent grey or silver sedans in the \"Cars + trucks\" category, and tell me how much mileage each has.",
+    "intent_template": "Find the three most recent {{item}} in the \"{{category}}\" category, and tell me {{attribute}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "175k |OR| 175000 |OR| 175,000",
+          "153k |OR| 153000 |OR| 153,000",
+          "154k |OR| 154000 |OR| 154,000"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_39",
+    "source_task_id": 39,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the three most recent bikes with predominantly red frames in the \"Bikes\" category, and tell me the size of their frames in inches.",
+    "intent_template": "Find the three most recent {{item}} in the \"{{category}}\" category, and tell me {{attribute}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "18",
+          "14",
+          "19"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=10&iPage=8'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_46",
+    "source_task_id": 46,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "I recall seeing this exact item on the site, help me find the most recent post of it.",
+    "intent_template": "I recall seeing this exact item on the site, help me find the most recent post of it.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=66067",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_47",
+    "source_task_id": 47,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "I recall seeing this exact item on the site, help me find the most recent post of it. I recall that it was very expensive.",
+    "intent_template": "I recall seeing this exact item on the site, help me find the most recent post of it. I recall {{hint}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=7434",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=16826'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_51",
+    "source_task_id": 51,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find me the most recent painting in the \"Arts + crafts\" category of a town that looks like this.",
+    "intent_template": "Find me the most recent {{type}} in the \"{{category}}\" category of {{item}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=39336",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_63",
+    "source_task_id": 63,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the most expensive video game item with the character from the image on its display.",
+    "intent_template": "Find the {{product}} with {{detail}} from the image {{location}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=17379",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_69",
+    "source_task_id": 69,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the most expensive item posted from Delaware which is related to the brand on the hat in the image.",
+    "intent_template": "Find the {{product}} which {{detail}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=15047",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=74603'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_71",
+    "source_task_id": 71,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the most expensive item posted from Delaware which is of the same item as in the image.",
+    "intent_template": "Find the {{product}} which {{detail}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=12399 |OR| http://localhost:9980/index.php?page=item&id=53168",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=16826'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_72",
+    "source_task_id": 72,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "I like the products in the image. Can you find the cheapest posting from Delaware where I can buy similar items, if there's one?",
+    "intent_template": "I like {{attribute}}. Can you find the {{detail}} where I can buy similar items, if there's one?",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=43255",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_75",
+    "source_task_id": 75,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Navigate to my listing of the white vase and change the price to $120 (including in the description).",
+    "intent_template": "Navigate to my listing {{item}} and {{action}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84148",
+          "locator": "func:get_query_text(__page__, '.price')",
+          "required_contents": {
+            "must_include": [
+              "120.00"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84148",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_include": [
+              "$120"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84148",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_exclude": [
+              "$80"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_76",
+    "source_task_id": 76,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Navigate to my listing of the blue bike and change the price to $85.50 (including in the description).",
+    "intent_template": "Navigate to my listing {{item}} and {{action}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84146",
+          "locator": "func:get_query_text(__page__, '.price')",
+          "required_contents": {
+            "must_include": [
+              "85.50"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84146",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_include": [
+              "$85.50"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84146",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_exclude": [
+              "$250"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=16826'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_77",
+    "source_task_id": 77,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Navigate to my listing of the all-black bike and change the price (including in the description) to one dollar more than the cheapest bike on the site (ignoring bikes that cost $1).",
+    "intent_template": "Navigate to my listing {{item}} and {{action}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84145",
+          "locator": "func:get_query_text(__page__, '.price')",
+          "required_contents": {
+            "must_include": [
+              "6.00"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84145",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_include": [
+              "$6"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84145",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_exclude": [
+              "$300"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_81",
+    "source_task_id": 81,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the cheapest book with a hurricane on the cover.",
+    "intent_template": "Find the cheapest {{item}} {{condition}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=4727",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=74603'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_84",
+    "source_task_id": 84,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the most expensive ring that has an image taken as a selfie, and tell me how much it costs in dollars.",
+    "intent_template": "Find the {{product}}, and tell me how much it costs in dollars.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "6000"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=43966",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_85",
+    "source_task_id": 85,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the most expensive ring that does not show the physical ring in the image, and tell me how much it costs in dollars.",
+    "intent_template": "Find the {{product}}, and tell me how much it costs in dollars.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3200"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=57020",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_92",
+    "source_task_id": 92,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the most expensive TV from Maryland that displays an ongoing NFL game.",
+    "intent_template": "Find the {{item}} from {{location}} {{condition}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=23785",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=74603'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_95",
+    "source_task_id": 95,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the most expensive boat with a listing image showing it on water. Add a 5 star rating with title \"Awesome boat\" and text \"Mine is similar!\".",
+    "intent_template": "Find the {{item}} with {{attribute}}. Add a {{rating}} rating with title \"{{title}}\" and text \"{{text}}\".",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=40932",
+          "locator": "func:get_query_text(__page__, '.comments_list h3')",
+          "required_contents": {
+            "must_include": [
+              "Awesome boat by Blake Sullivan"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=40932",
+          "locator": "func:get_query_text(__page__, '.comments_list')",
+          "required_contents": {
+            "must_include": [
+              "Mine is similar!",
+              "5 of 5"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_99",
+    "source_task_id": 99,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the most expensive wheelchair lift that has multiple people in the image of the listing, and tell me how much it costs in dollars.",
+    "intent_template": "Find the {{product}}, and tell me how much it costs in dollars.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "2995"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=9830",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_100",
+    "source_task_id": 100,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "What is the number shown on the image of the most expensive race car in the Arts + crafts section?",
+    "intent_template": "What is {{attribute}} on the {{product}}?",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "61 |OR| sixty one"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=2354",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_101",
+    "source_task_id": 101,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Explore the \"Art + crafts\" category, and find the most expensive painting of the city in this image.",
+    "intent_template": "Explore the \"{{category}}\" category, and find the {{item}} in this image.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=83533",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_102",
+    "source_task_id": 102,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Tell me the height in inches of the most recently listed item in Art + crafts section portraying the person in the image.",
+    "intent_template": "Tell me the {{product}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "8 1/2 |OR| eight and a half |OR| 8.5 |OR| eight point five"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_104",
+    "source_task_id": 104,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the most recently listed RV with an iPhone screenshot as its image. Add a 3 star rating with title \"Any other pics?\" and text \"Do you have a higher quality picture?\".",
+    "intent_template": "Find the {{item}} with {{attribute}}. Add a {{rating}} rating with title \"{{title}}\" and text \"{{text}}\".",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=21206",
+          "locator": "func:get_query_text(__page__, '.comments_list h3')",
+          "required_contents": {
+            "must_include": [
+              "Any other pics? by Blake Sullivan"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=21206",
+          "locator": "func:get_query_text(__page__, '.comments_list')",
+          "required_contents": {
+            "must_include": [
+              "Do you have a higher quality picture?",
+              "3 of 5"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_105",
+    "source_task_id": 105,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the cheapest guitar with a red velvet lined case.",
+    "intent_template": "Find the cheapest {{item}} {{condition}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=23225",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_107",
+    "source_task_id": 107,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Tell me the color of the rims on the most expensive bike in West Virginia.",
+    "intent_template": "Tell me the {{product}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "purple",
+          "blue |OR| cyan"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_110",
+    "source_task_id": 110,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Search for \"mario kart\" and tell me how many games are in the image of the most recently listed item that costs at least $300.",
+    "intent_template": "Search for \"{{phrase}}\" and tell me {{detail}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "0 |OR| zero"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=10&iPage=8'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_111",
+    "source_task_id": 111,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Search for \"hockey\" and tell me the team name of the jersey on the most recently listed item.",
+    "intent_template": "Search for \"{{phrase}}\" and tell me {{detail}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Kings"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_112",
+    "source_task_id": 112,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Search for \"basketball\" and navigate to the cheapest item that has a man in a suit in its image.",
+    "intent_template": "Search for \"{{phrase}}\" and navigate to the {{product}} that {{condition}} in its image.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=68564",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=10&iPage=8'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_113",
+    "source_task_id": 113,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Search for \"football\" and navigate to the most expensive item whose image has a player wearing number 16.",
+    "intent_template": "Search for \"{{phrase}}\" and navigate to the {{product}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=30630",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=74603'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_122",
+    "source_task_id": 122,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find the oldest listed red book in the \"Books\" category, and tell me how much it costs in dollars.",
+    "intent_template": "Find the {{product}}, and tell me how much it costs in dollars.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=69456",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_126",
+    "source_task_id": 126,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Find me the most recently listed item in the \"Books\" category that references the person in the image.",
+    "intent_template": "Find me {{product}} that {{condition}} in the image.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=64659",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_127",
+    "source_task_id": 127,
+    "site": "classifieds",
+    "sites": [
+      "classifieds"
+    ],
+    "intent": "Search for \"MCAT\" and navigate to the prep book that has 2020-2021 on the cover.",
+    "intent_template": "Search for \"{{phrase}}\" and navigate to the {{product}}.",
+    "original_start_url": "http://localhost:9980",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=5802",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=12&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_6",
+    "source_task_id": 6,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "I'm trying to do some research about the post with this image. Tell me how many comments this post has.",
+    "intent_template": "I'm trying to do some research about the post with this image. Tell me how many comments this post has.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "28"
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/food/82940/homemade-sweet-amp-spicy-sticky-chinese-pork-belly",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "28"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_7",
+    "source_task_id": 7,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "I'm doing some research about the post with this image. Navigate to the comment url of the recipe posted by the OP in the comments.",
+    "intent_template": "I'm doing some research about the post with this image. Navigate to the comment url of the recipe posted by the OP in the comments.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "The OP did not provide a recipe",
+      "reference_answer_raw_annotation": "The OP did not provide a recipe"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_8",
+    "source_task_id": 8,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "I'm doing some research about the post with this image. Navigate to the comment url of the recipe posted by the OP in the comments.",
+    "intent_template": "I'm doing some research about the post with this image. Navigate to the comment url of the recipe posted by the OP in the comments.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/food/104449/-/comment/1958174",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_11",
+    "source_task_id": 11,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Can you help me find and navigate to the comments section of the post with this image?",
+    "intent_template": "Can you help me find and navigate to the comments section of the post with this image?",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/Music",
+    "wrong_start_url": "http://localhost:9999/f/Music",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/pittsburgh/45900",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/Music'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_12",
+    "source_task_id": 12,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Can you help me find and navigate to the comments section of the post with this image?",
+    "intent_template": "Can you help me find and navigate to the comments section of the post with this image?",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/memes",
+    "wrong_start_url": "http://localhost:9999/f/memes",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/pittsburgh/46057",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/memes'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_13",
+    "source_task_id": 13,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Can you help me find and navigate to the comments section of the post with this image?",
+    "intent_template": "Can you help me find and navigate to the comments section of the post with this image?",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/gaming",
+    "wrong_start_url": "http://localhost:9999/f/gaming",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/Newark/35719",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/gaming'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_16",
+    "source_task_id": 16,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "What month and year (in mm-yyyy format) was this image posted in the /f/pics subreddit?",
+    "intent_template": "What {{question}} {{modifier}}?",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "10-2022"
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/pics/25017/my-oil-painting-of-mcdonald-s-filet-o-fish",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "October 2022"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_19",
+    "source_task_id": 19,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find and upvote this post. I think it was posted in /f/GetMotivated.",
+    "intent_template": "Find and upvote this post. I think it was posted in {{forum}}.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/gaming",
+    "wrong_start_url": "http://localhost:9999/f/gaming",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9999/f/GetMotivated/76904/image-you-are-tomorrow",
+          "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+          "required_contents": {
+            "must_include": [
+              "vote vote--user-upvoted"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/gaming'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_20",
+    "source_task_id": 20,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find and upvote this post. I think it was posted in /f/space.",
+    "intent_template": "Find and upvote this post. I think it was posted in {{forum}}.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/food/18831",
+    "wrong_start_url": "http://localhost:9999/f/food/18831",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9999/f/space/91926/milkdromeda",
+          "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+          "required_contents": {
+            "must_include": [
+              "vote vote--user-upvoted"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/food/18831'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_21",
+    "source_task_id": 21,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find and upvote this post. I think it was posted in /f/OldSchoolCool.",
+    "intent_template": "Find and upvote this post. I think it was posted in {{forum}}.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/memes/41674",
+    "wrong_start_url": "http://localhost:9999/f/memes/41674",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9999/f/OldSchoolCool/56995/goerge-clooney-1990",
+          "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+          "required_contents": {
+            "must_include": [
+              "vote vote--user-upvoted"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/memes/41674'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_22",
+    "source_task_id": 22,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find this post and tell me what the top comment says.",
+    "intent_template": "Find this post and tell me what the top comment says.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/Music",
+    "wrong_start_url": "http://localhost:9999/f/Music",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Very rare. I swear last time i saw these on ebay they were like £700"
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/consoles/103611",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "Very rare. I swear last time i saw these on ebay they were like £700"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/Music'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_23",
+    "source_task_id": 23,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find this post and tell me what the top comment says.",
+    "intent_template": "Find this post and tell me what the top comment says.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "https://imgur.com/a/P1YyboM"
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/photoshopbattles/24816/-/comment/155650",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "https://imgur.com/a/P1YyboM"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_24",
+    "source_task_id": 24,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find this post and tell me what the top comment says.",
+    "intent_template": "Find this post and tell me what the top comment says.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Nah fam, that's a",
+          "psychonaut"
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/pics/45632/-/comment/792645",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "Nah fam, that's a psychonaut"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_25",
+    "source_task_id": 25,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find this post and tell me what the top comment says.",
+    "intent_template": "Find this post and tell me what the top comment says.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/EarthPorn",
+    "wrong_start_url": "http://localhost:9999/f/EarthPorn",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Pompadour Cotinga I believe. On the top 10 list of birds I will never see in my garden."
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/pics/45697/-/comment/794907",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "Pompadour Cotinga I believe. On the top 10 list of birds I will never see in my garden."
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/EarthPorn'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_26",
+    "source_task_id": 26,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find this post and tell me what the top comment says.",
+    "intent_template": "Find this post and tell me what the top comment says.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "This post does not exist on the site.",
+      "reference_answer_raw_annotation": "This post does not exist on the site."
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_27",
+    "source_task_id": 27,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Make a Reddit post with this image (https://images.pexels.com/photos/14267038/pexels-photo-14267038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) in the most relevant subreddit, and navigate to its comments section.",
+    "intent_template": "Make a Reddit post with this image ({{image_url}}) in the most relevant subreddit, and navigate to its comments section.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/EarthPorn",
+    "wrong_start_url": "http://localhost:9999/f/EarthPorn",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/MechanicalKeyboards",
+      "url_note": "GOLD in PRED",
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".submission__content",
+          "eval_fuzzy_image_match": "https://images.pexels.com/photos/14267038/pexels-photo-14267038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/EarthPorn'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_28",
+    "source_task_id": 28,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Write a story about this picture and post it in the most relevant subreddit.",
+    "intent_template": "Write a story about this picture and post it in the most relevant subreddit.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/pics",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.submission__inner')",
+          "required_contents": {
+            "must_include": [
+              "baseball"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.submission__submitter')",
+          "required_contents": {
+            "must_include": [
+              "MarvelsGrantMan136"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.submission__info')",
+          "required_contents": {
+            "must_include": [
+              "pics |OR| sports"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".submission__image",
+          "eval_fuzzy_image_match": "coco_images/000000515982.jpg"
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_29",
+    "source_task_id": 29,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Write a story about this picture and post it in the most relevant subreddit.",
+    "intent_template": "Write a story about this picture and post it in the most relevant subreddit.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/memes/41674",
+    "wrong_start_url": "http://localhost:9999/f/memes/41674",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/pics",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.submission__inner')",
+          "required_contents": {
+            "must_include": [
+              "cat"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.submission__submitter')",
+          "required_contents": {
+            "must_include": [
+              "MarvelsGrantMan136"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.submission__info')",
+          "required_contents": {
+            "must_include": [
+              "pics |OR| aww"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".submission__image",
+          "eval_fuzzy_image_match": "https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg"
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/memes/41674'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_30",
+    "source_task_id": 30,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+    "intent_template": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/Music",
+    "wrong_start_url": "http://localhost:9999/f/Music",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/gaming/105429",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/Music'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_31",
+    "source_task_id": 31,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+    "intent_template": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/memes",
+    "wrong_start_url": "http://localhost:9999/f/memes",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "This user does not have other posts.",
+      "reference_answer_raw_annotation": "This user does not have other posts."
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/memes'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_32",
+    "source_task_id": 32,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+    "intent_template": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/nyc/44500 |OR| http://localhost:9999/f/nyc/44527 |OR| http://localhost:9999/f/pics/89551 |OR| http://localhost:9999/f/pics/110950 |OR| http://localhost:9999/f/nyc/130377",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_33",
+    "source_task_id": 33,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+    "intent_template": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/gaming/126203/last-of-us-on-pc-part-ii",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_38",
+    "source_task_id": 38,
+    "site": "reddit",
+    "sites": [
+      "reddit"
+    ],
+    "intent": "I'd like to find the subreddit for the city this photo was taken in. Can you navigate to it?",
+    "intent_template": "I'd like to find the subreddit for the city this photo was taken in. Can you navigate to it?",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/jerseycity",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_43",
+    "source_task_id": 43,
+    "site": "reddit",
+    "sites": [
+      "shopping",
+      "reddit"
+    ],
+    "intent": "Gather the title of the cheapest yellow video projector in the \"Video Projectors\" category from OneStopShop, and post its full product name in the /f/gadgets subreddit under the title \"Has anyone bought this product?\"",
+    "intent_template": "Gather the title of {{product}} from OneStopShop, and post its full product name in the {{subreddit}} subreddit under the title \"{{post_title}}\"",
+    "original_start_url": "http://localhost:7770 |AND| http://localhost:9999/forums",
+    "start_url": "http://localhost:9999/f/food/18831",
+    "wrong_start_url": "http://localhost:9999/f/food/18831",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/gadgets",
+      "url_note": "GOLD in PRED",
+      "program_html": [
+        {
+          "url": "func:reddit_get_post_url('__last_url__')",
+          "locator": "func:get_query_text(__page__, '.submission__title')",
+          "required_contents": {
+            "exact_match": "Has anyone bought this product?"
+          }
+        },
+        {
+          "url": "func:reddit_get_post_url('__last_url__')",
+          "locator": "func:get_query_text(__page__, '.submission__body')",
+          "required_contents": {
+            "must_include": [
+              "RUIQIMAO Mini Projector Portable 1080P Home Cinema Projector Theater Video 100''Display LCD HiFi Audio for TV Box/Xbox/TF Card/U Disk P2L1"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770 |AND| http://localhost:9999/forums'. Wrong start injected: 'http://localhost:9999/f/food/18831'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_44",
+    "source_task_id": 44,
+    "site": "reddit",
+    "sites": [
+      "shopping",
+      "reddit"
+    ],
+    "intent": "Find an image of the most expensive artwork from the Posters & Prints category from OneStopShop, and post it as an image in the /f/Art subreddit with the title as the name of the piece and the artist's name.",
+    "intent_template": "Find an image of {{product}} from OneStopShop, and post it as an image in the {{subreddit}} subreddit with the title as the name of the piece and the artist's name.",
+    "original_start_url": "http://localhost:7770 |AND| http://localhost:9999/forums",
+    "start_url": "http://localhost:9999/f/memes/41674",
+    "wrong_start_url": "http://localhost:9999/f/memes/41674",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/Art",
+      "url_note": "GOLD in PRED",
+      "program_html": [
+        {
+          "url": "func:reddit_get_post_url('__last_url__')",
+          "locator": "func:get_query_text(__page__, '.submission__title')",
+          "required_contents": {
+            "must_include": [
+              "Frozen Shores",
+              "Marion Griese"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".submission__image",
+          "eval_fuzzy_image_match": "http://localhost:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B09NRZ3LZW.0.jpg"
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "easy",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:7770 |AND| http://localhost:9999/forums'. Wrong start injected: 'http://localhost:9999/f/memes/41674'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_45",
+    "source_task_id": 45,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the total area in square miles, of the states that are ranked as having 150+ endangered species? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/60156 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/food/18831",
+    "wrong_start_url": "http://localhost:9999/f/food/18831",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "561400 |OR| 561,400"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/60156 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/food/18831'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_46",
+    "source_task_id": 46,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the 2022 total nominal GDP of the area that produces most sugarcane in the year of 2021? (in billion)? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/103854 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/gaming",
+    "wrong_start_url": "http://localhost:9999/f/gaming",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "39000 |OR| 39,000"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/103854 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/gaming'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_47",
+    "source_task_id": 47,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the area (in km^2) of the country that emitted second most plastic waste into the ocean? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/103905 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/Music",
+    "wrong_start_url": "http://localhost:9999/f/Music",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3287263 |OR| 3,287,263"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/103905 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/Music'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_48",
+    "source_task_id": 48,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the absolute difference between NVIDIA's FY22 net income listed in wikipedia and reddit forum 'dataisbeautiful' (in billions)? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/gaming",
+    "wrong_start_url": "http://localhost:9999/f/gaming",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "5.35"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "medium",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/gaming'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_49",
+    "source_task_id": 49,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the first year the Summer Olympics include the women's version of the sport that had the largest average male athlete weight in the 2012 Olympics? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/82181 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "1976"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "hard",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/82181 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_53",
+    "source_task_id": 53,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What was the total asset value (in trillions of USD, to 3 decimal places) of the fifth largest employer in China in 2017? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/60171 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/Music",
+    "wrong_start_url": "http://localhost:9999/f/Music",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "0.585"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/60171 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/Music'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_54",
+    "source_task_id": 54,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "When did programming language that has the largest variance in salary first appear? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "When {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/18215 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/memes/41674",
+    "wrong_start_url": "http://localhost:9999/f/memes/41674",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "exact_match": "August 1993"
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/18215 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/memes/41674'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_55",
+    "source_task_id": 55,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "Who is the first spouse of the second most philanthropic billionaire, measured in percentage of wealth donated in 2022? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "Who {{question}}, {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/38920 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/memes/41674",
+    "wrong_start_url": "http://localhost:9999/f/memes/41674",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "exact_match": "Annaliese Witschak"
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/38920 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/memes/41674'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_57",
+    "source_task_id": 57,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the sum of the area, in sq km, of the top two countries that has the most uniformly dense transportation network? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/124818 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "387711 |OR| 387,711"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/124818 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_59",
+    "source_task_id": 59,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the total employees (in 2021) of the accounting firms that provide both tax and legal services? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/39014 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "876374 |OR| 876,374"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/39014 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_60",
+    "source_task_id": 60,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the ISBN of the genre fiction book that takes OP the longest time to read in 2022? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/82296 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/gaming",
+    "wrong_start_url": "http://localhost:9999/f/gaming",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "exact_match": "0385302304"
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/82296 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/gaming'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_61",
+    "source_task_id": 61,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "Who directed the movie that is shown as the background picture of the third highest earning movie production companies? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "Who {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/103828 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/food/18831",
+    "wrong_start_url": "http://localhost:9999/f/food/18831",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "exact_match": "Sam Mendes"
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/103828 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/food/18831'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_62",
+    "source_task_id": 62,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "Who potrayed the character in friends that has the most intimate connections? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "Who {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/82234 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/memes",
+    "wrong_start_url": "http://localhost:9999/f/memes",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "exact_match": "Lisa Kudrow"
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/82234 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/memes'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_63",
+    "source_task_id": 63,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the highest elevation (in ft) of the home state of the team that surpassed Buffalo Bills in both defensive rating and offensive rating during the 2022 Season? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/82193 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/EarthPorn",
+    "wrong_start_url": "http://localhost:9999/f/EarthPorn",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3213 |OR| 3,213"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/82193 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/EarthPorn'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "task_id": "recovery_65",
+    "source_task_id": 65,
+    "site": "reddit",
+    "sites": [
+      "wikipedia",
+      "reddit"
+    ],
+    "intent": "What is the total city population in 2021 of the two cities that the densest populated in the population density map of Portugal? Answer using the information from the Wikipedia site in the second tab.",
+    "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/82170 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "start_url": "http://localhost:9999/f/memes",
+    "wrong_start_url": "http://localhost:9999/f/memes",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "776813 |OR| 776,813"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "reasoning_difficulty": "medium",
+    "visual_difficulty": "hard",
+    "category": "recovery",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/82170 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/memes'. Agent must recognize wrong state and navigate to correct starting point."
+  }
+]

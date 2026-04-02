@@ -1,0 +1,4925 @@
+[
+  {
+    "benchmark_id": "webpqb_001",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 437,
+    "intent": "Find me the cheapest item that costs between $3-4 and can hold up a phone like in the image shown and add it to my cart.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Wireless Bluetooth Selfie Stick and Tripod Combination - Compatible for Samsung S10 Lite & Most Android/iOS Smart Phones"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_002",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 170,
+    "intent": "Navigate to the most expensive item in the \"Cell phones\" category which includes in its design the character in this image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=36313",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_003",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 99,
+    "intent": "Find the most expensive wheelchair lift that has multiple people in the image of the listing, and tell me how much it costs in dollars.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "2995"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=9830",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_004",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 211,
+    "intent": "Find me the cheapest farm pig in the \"Farm + garden\" category on this site.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=72643",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_005",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 126,
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "This exact item does is not available on OneStopMarket.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_006",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 69,
+    "intent": "Find the most expensive item posted from Delaware which is related to the brand on the hat in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=15047",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_007",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 111,
+    "intent": "Search for \"hockey\" and tell me the team name of the jersey on the most recently listed item.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Kings"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_008",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 452,
+    "intent": "Find me the cheapest shoe with marine life printed on it and add one of any size to my shopping cart.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "MAPOLO Animals Words Men's Boys Casual Walking Shoes Sneaker Lightweight Stylish Athletic Tennis Sports Running Shoes for Outdoor Hiking Travel Driving"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_009",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 438,
+    "intent": "Navigate to the category where this image is most likely to be found. Then, find me the cheapest item that costs more than $5 and can charge multiple devices like in the image shown and add it to my cart.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Philips 6-Outlet Extender Surge Protector, 3-Prong, Wall Adapter Plug, Space Saving Design, 1020J, UL Listed, White, SPS1006WA/37 |OR| J.VOLT 4 Outlet Power Strip, 15A 125V 1875W, 90 Joules, 20-Inch Short Cord with Angled Plug, Small Power Strip Surge Protector, ETL Listed"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_010",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 177,
+    "intent": "Navigate to the cheapest listing in the \"Cars + trucks\" category from Ohio or Maryland that is the same color as the objects in this image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=15340",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_011",
+    "category": "multi_path",
+    "site": "reddit",
+    "task_id": 44,
+    "intent": "Find an image of the most expensive artwork from the Posters & Prints category from OneStopShop, and post it as an image in the /f/Art subreddit with the title as the name of the piece and the artist's name.",
+    "start_url": "http://localhost:7770 |AND| http://localhost:9999/forums",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/Art",
+      "url_note": "GOLD in PRED",
+      "program_html": [
+        {
+          "url": "func:reddit_get_post_url('__last_url__')",
+          "locator": "func:get_query_text(__page__, '.submission__title')",
+          "required_contents": {
+            "must_include": [
+              "Frozen Shores",
+              "Marion Griese"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".submission__image",
+          "eval_fuzzy_image_match": "http://localhost:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B09NRZ3LZW.0.jpg"
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_012",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 126,
+    "intent": "Find me the most recently listed item in the \"Books\" category that references the person in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=64659",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_013",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 123,
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "328.77"
+        ]
+      },
+      "reference_url": "http://localhost:7770/skyinbags-hand-painted-abstract-plant-tree-oil-painting-on-canvas-large-picture-wall-artwork-modern-art-poster-decoration-for-corridor-live-room-home-decor-gift-90x130cm-unframed9.html",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "$328.77"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_014",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 37,
+    "intent": "Find all listings for this exact item on OSClass and compare its price to the cheapest listing on OneStopMarket. Return the link of the cheapest item on both sites.",
+    "start_url": "http://localhost:9980 |AND| http://localhost:7770",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "http://localhost:7770/nintendo-switch-w-neon-blue-neon-red-joy-con-mario-kart-8-deluxe-full-game-download-switch.html",
+          "http://localhost:9980/index.php?page=item&id=59435"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_015",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 102,
+    "intent": "Tell me the height in inches of the most recently listed item in Art + crafts section portraying the person in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "8 1/2 |OR| eight and a half |OR| 8.5 |OR| eight point five"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_016",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 81,
+    "intent": "Find the cheapest book with a hurricane on the cover.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=4727",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_017",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 95,
+    "intent": "Find the most expensive boat with a listing image showing it on water. Add a 5 star rating with title \"Awesome boat\" and text \"Mine is similar!\".",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=40932",
+          "locator": "func:get_query_text(__page__, '.comments_list h3')",
+          "required_contents": {
+            "must_include": [
+              "Awesome boat by Blake Sullivan"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=40932",
+          "locator": "func:get_query_text(__page__, '.comments_list')",
+          "required_contents": {
+            "must_include": [
+              "Mine is similar!",
+              "5 of 5"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_018",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 156,
+    "intent": "Explore the \"Bikes\" category, and find the oldest listed item whose image is taken on carpet.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=6429",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_019",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 127,
+    "intent": "Search for \"MCAT\" and navigate to the prep book that has 2020-2021 on the cover.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=5802",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_020",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 154,
+    "intent": "Explore the \"Furniture\" category, and find the oldest listed item whose image is taken outside.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=67923",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_021",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 206,
+    "intent": "Find the cheapest freezer with a warranty between $250 and $280 that does not have a fridge.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=32949",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_022",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 103,
+    "intent": "Explore the \"Arts + crafts\" category, and find the most recently listed item portraying the person in this image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=77577",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_023",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 60,
+    "intent": "Find the most expensive video game item where I can roleplay the situation in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=4188",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_024",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 453,
+    "intent": "Find me a product in the Shoes tab that has the closest color to the sneakers in the other tab. Add one (in any size) to my cart.",
+    "start_url": "http://localhost:7770/sweetshopz-beer-irish-wallpaper-st-patrick-day-active-running-walking-sneakers-shoes-for-women-men-unisex-kids-adults-fashion-sports-black.html |AND| http://localhost:7770/clothing-shoes-jewelry/men/shoes.html?p=4&product_list_order=price",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "HUTSENDOX Pillow Slippers Slides for Women Men House Cloud Slipper Shower Slide Sandals Anti-Slip Summer Slippers for Indoor Outdoor",
+              "Green"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_025",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 67,
+    "intent": "Find the cheapest video game item where I can roleplay the situation in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=7114",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_026",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 181,
+    "intent": "Navigate to the most expensive item in the \"Video gaming\" category with the same item from the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=7915",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_027",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 21,
+    "intent": "What is the color of the most expensive item in the \"Over-Ear Headphones\" category?",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "black"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "black"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_028",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 19,
+    "intent": "What is the price of the most expensive feather lamp product in the \"Lamps & Shades\" category?",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "920.99"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "$920.99"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_029",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 62,
+    "intent": "Find the most expensive video game item with the character from the image on its display.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=19137",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_030",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 210,
+    "intent": "Find me the cheapest lamb in the \"Farm + garden\" category on this site.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=81060",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_031",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 86,
+    "intent": "Find the cheapest Toyota that is the same color as the cheaper Toyota in my listings.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=72103",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_032",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 0,
+    "intent": "Find me the cheapest blue kayak on this site.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=4799",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_033",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 41,
+    "intent": "What is the color and price of the cheapest item in the \"Men's Uniforms, Work & Safety\" category?",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "white",
+          "0.19"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "white, $0.19"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_034",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 157,
+    "intent": "Explore the \"Music instruments\" category, and find the oldest listed item whose image shows an instruction manual.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=33917",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_035",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 65,
+    "intent": "Find the cheapest video game item where I can roleplay the situation in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=28239",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_036",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 66,
+    "intent": "Find the cheapest video game item where I can roleplay the situation in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=6175",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_037",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 45,
+    "intent": "Find me the cheapest item in the \"Children's Dental Care\" category that comes in the style of a cupcake.",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/children-s-toothbrush-u-shaped-age-2-12-kids-silicone-toothbrush-food-soft-silicone-brush-head-with-cute-cake-look.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_038",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 116,
+    "intent": "Search for \"brace\" and navigate to the cheapest item that matches the body part in this image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=42654",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_039",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 22,
+    "intent": "What is the color of the second cheapest item in the \"Snack Gifts\" category?",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "red |OR| yellow"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "red and yellow"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_040",
+    "category": "multi_path",
+    "site": "reddit",
+    "task_id": 154,
+    "intent": "I think I saw a post in f/DataIsBeautiful that talked about the price of training ImageNet models. Can you tell me how much it cost in 2020 was to train a top-5 model with >93% accuracy? Finally, take me to the comments section of the post.",
+    "start_url": "http://localhost:9999",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match",
+        "url_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "7.43"
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/dataisbeautiful/103920",
+      "url_note": "GOLD in PRED",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "$7.43"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_041",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 12,
+    "intent": "What is the color of most recently listed motorcycle?",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "red"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=9068",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": ""
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_042",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 311,
+    "intent": "Tell me the price of the item in the fourth row, second column.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "string_note": "There is no fourth row.",
+      "reference_url": "",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_043",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 13,
+    "intent": "What is the price range for products in the first row of this page?",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "14.47",
+          "23.50"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "$14.47 - $23.50"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_044",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 54,
+    "intent": "Find the most recently listed item in the \"Video gaming\" category that is related to this game I used to play.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=787",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_045",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 68,
+    "intent": "Find the cheapest Tiger Woods video game item where the person on the cover has a red shirt.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=2278",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_046",
+    "category": "multi_path",
+    "site": "reddit",
+    "task_id": 93,
+    "intent": "What is the color of the plate used for the picture from the most controversial post of all time in f/food?",
+    "start_url": "http://localhost:9999",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "white"
+        ]
+      }
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_047",
+    "category": "multi_path",
+    "site": "reddit",
+    "task_id": 95,
+    "intent": "What is the color of the snow near the Chrismas tree in the picture from the second hottest post in f/newhaven?",
+    "start_url": "http://localhost:9999",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "purple |OR| pink"
+        ]
+      }
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_048",
+    "category": "multi_path",
+    "site": "reddit",
+    "task_id": 97,
+    "intent": "What is the color of the radio in the picture from the newest post in f/BuyItForLife?",
+    "start_url": "http://localhost:9999",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "white"
+        ]
+      }
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_049",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 55,
+    "intent": "Find the most recently listed item in the \"Collectibles\" category that depicts the inventors of this.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=78765",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_050",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 13,
+    "intent": "What is the color of the most expensive item in the \"Boats\" category?",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "white"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=40932",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": ""
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_051",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 125,
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "This exact item is not available on OneStopMarket.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_052",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 61,
+    "intent": "Find the most expensive video game item where I can roleplay the situation in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=42756",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_053",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 184,
+    "intent": "Navigate to the most expensive item in the \"Collectibles\" category with the same exact item from the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=18837",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_054",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 100,
+    "intent": "What is the number shown on the image of the most expensive race car in the Arts + crafts section?",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "61 |OR| sixty one"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=2354",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_055",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 182,
+    "intent": "Navigate to the most recent video game listing with the the Playstation home screen in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=41845",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_056",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 232,
+    "intent": "Find me the cheapest controller from the classifieds site that is meant for the console in the image on the Reddit tab.",
+    "start_url": "http://localhost:9999/f/consoles/124577/name-a-better-console-you-can-t |AND| http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=33011",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_057",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 198,
+    "intent": "Navigate to the cheapest watch with hints of faded red and green that costs at least 13,000 dollars.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=37012",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_058",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 195,
+    "intent": "Navigate to the most expensive yellow motorcycle in the \"Motorcycles\" category that costs at least 25,000 dollars.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There are no yellow motorcycles worth at least 25000 dollars.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_059",
+    "category": "multi_path",
+    "site": "shopping",
+    "task_id": 170,
+    "intent": "Can you find me a product that combines the functions of the items in the following images?",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "Projection Keyboard"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_060",
+    "category": "multi_path",
+    "site": "classifieds",
+    "task_id": 115,
+    "intent": "Search for \"brace\" and navigate to the most recently listed item that matches the body part in this image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=68133",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_061",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 228,
+    "intent": "Find me the most recent live plant listing from the classifieds site that is the same plant type as the plant shown in the image on OneStopMarket. Then, if there are at least 3 of those plants below 9ft tall shown in the product listing image, comment with the title \"Interested\" and text \"I want 3\".",
+    "start_url": "http://localhost:9980 |AND| http://localhost:7770/posterazzi-pdxjp6549small-live-photo-print-12-x-24-multi.html",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=58212",
+          "locator": "func:get_query_text(__page__, '.comments_list h3')",
+          "required_contents": {
+            "must_include": [
+              "Interested by Blake Sullivan"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=58212",
+          "locator": "func:get_query_text(__page__, '.comments_list')",
+          "required_contents": {
+            "must_include": [
+              "I want 3"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_062",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 75,
+    "intent": "Navigate to my listing of the white vase and change the price to $120 (including in the description).",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84148",
+          "locator": "func:get_query_text(__page__, '.price')",
+          "required_contents": {
+            "must_include": [
+              "120.00"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84148",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_include": [
+              "$120"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84148",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_exclude": [
+              "$80"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_063",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 175,
+    "intent": "Navigate to the cheapest controller in the \"Video gaming\" category from Ohio or Pennsylvania that is predominantly white.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=80517",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_064",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 155,
+    "intent": "Find me a set of headphones of the same brand as the product in this picture. It needs to be silver colored and have at least 10 reviews with an average rating greater than 4.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/sony-wh1000xm3-bluetooth-wireless-noise-canceling-headphones-silver-wh-1000xm3-s-renewed.html |OR| http://localhost:7770/sony-h900n-hi-res-noise-cancelling-wireless-headphone-grayish-black-renewed.html |OR| http://localhost:7770/sony-mdrx10-red-simon-cowell-x-headphones-with-50mm-diaphragms.html",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_065",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 196,
+    "intent": "Navigate to the most expensive red truck in the \"Cars + trucks\" category from Maryland that is at least 50,000 dollars.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "There are no red trucks from Maryland worth at least 50000 dollars.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_066",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 176,
+    "intent": "Find me a black headphone that is of the same brand as the product in this picture and buy it for me. It needs to be priced more than $1000.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector('.order-details-items.ordered').outerText",
+          "required_contents": {
+            "must_include": [
+              "B01LD5GO7I"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_067",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 177,
+    "intent": "Find me a headphone that is of the same brand as the product in this picture and buy it for me. It needs to have color sliver and have at least 10 reviews with an average rating greater than 4.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector('.order-details-items.ordered').outerText",
+          "required_contents": {
+            "must_include": [
+              "B07J9YNRWF |OR| B07CX6HHFK |OR| B00972M942"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_068",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 133,
+    "intent": "Find the oldest listing of Xbox One games in the \"Video gaming\" category with more than 9 games in the listing image. Add a 4 star rating with title \"Nice collection\" and text \"Any other games?\".",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=67441",
+          "locator": "func:get_query_text(__page__, '.comments_list h3')",
+          "required_contents": {
+            "must_include": [
+              "Nice collection by Blake Sullivan"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=67441",
+          "locator": "func:get_query_text(__page__, '.comments_list')",
+          "required_contents": {
+            "must_include": [
+              "Any other games?",
+              "4 of 5"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_069",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 166,
+    "intent": "Find me a shoe that is designed for the sport depicted in the first picture and has the same brand as products in the second picture. It needs to have the same color as the flower in the third picture.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_attributes(__page__, 'manufacturer |OR| brand name')",
+          "required_contents": {
+            "must_include": [
+              "adidas"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "Basketball",
+              "Sneaker |OR| Shoe"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".fotorama__stage__frame",
+          "eval_vqa": [
+            {
+              "question": "Is the shoe red? (yes/no)",
+              "answer": "yes"
+            }
+          ]
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_070",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 413,
+    "intent": "Buy me a pair of small shorts under 30 dollars that references the city in the image.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+          "required_contents": {
+            "must_include": [
+              "B07PT4DPK2",
+              "Small"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_071",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 183,
+    "intent": "Find me a 📺 that is of the same brand as products in one of the following pictures and buy 3️⃣ for me. It needs to have price between $4000 and $10000.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "func:shopping_get_order_product_quantity(__page__,'B08H5STXXC |OR| B07YGWT3KV |OR| B08X4XCJ4T |OR| B0959NDNJV |OR| B09GMQ72RH |OR| B098KLX2R8')",
+          "required_contents": {
+            "required_values": [
+              "== 3"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_072",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 178,
+    "intent": "Find me a multifunction printer (copy/scan/fax/print) that is of the same brand as the product in this picture and buy 🔟 of them for me. It needs to have color black and have at least 5 reviews with an average rating greater than 3.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "func:shopping_get_order_product_quantity(__page__,'B00PZ9WV94')",
+          "required_contents": {
+            "required_values": [
+              "== 10"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_073",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 179,
+    "intent": "Find me all of the protein bars that is of the same brand as the product in this picture and buy 12 bars of each (at the lowest possible per unit price) for me. It needs to have per unit price between $1.66 and $4.08.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "func:shopping_get_order_product_quantity(__page__,'B00MXUFL0E')",
+          "required_contents": {
+            "required_values": [
+              "== 1"
+            ]
+          }
+        },
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "func:shopping_get_order_product_option(__page__, 'B00MXUFL0E', 'Size')",
+          "required_contents": {
+            "must_include": [
+              "12 Count (Pack of 1)"
+            ]
+          }
+        },
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "func:shopping_get_order_product_quantity(__page__,'B07ZD2PB9F')",
+          "required_contents": {
+            "required_values": [
+              "== 1"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_074",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 343,
+    "intent": "Buy a desktop computer which has a CPU of the same brand as the CPU in the image.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+          "required_contents": {
+            "must_include": [
+              "AMD",
+              "Desktop |OR| PC"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_075",
+    "category": "high_distraction",
+    "site": "reddit",
+    "task_id": 74,
+    "intent": "Find me a keyboard version of what the man is wearing in the picture. Then, count how many white key is on it and post it in the comment section of that post with the following format: \"It has <number of keys> white keys!!\" (not including the double inverted commas), replacing <number of keys> with the actual number of white keys in the picture. Remember that partially occluded keycaps need to be counted also.",
+    "start_url": "http://localhost:9999",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9999/f/MechanicalKeyboards/56378",
+          "locator": "func:reddit_get_latest_comment_content_by_username(__page__, 'MarvelsGrantMan136')",
+          "required_contents": {
+            "must_include": [
+              "It has 38 white keys!! |OR| It has 39 white keys!!"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_076",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 180,
+    "intent": "Find me a digital camera with warranty that is of the same brand as products in one of the following pictures and buy one for me. It needs to be black and have at least 12 reviews. Furthermore, it cannot be too expensive - it needs to have price less than $700.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "func:shopping_get_order_product_quantity(__page__,'B001P06Q66')",
+          "required_contents": {
+            "required_values": [
+              "== 1"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_077",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 175,
+    "intent": "Find me a wireless white game controller that is of the same brand as the product in this picture and buy it for me. It needs to have at 10 reviews and be priced between $110-$120.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector('.order-details-items.ordered').outerText",
+          "required_contents": {
+            "must_include": [
+              "B07P3L5GMW"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_078",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 165,
+    "intent": "Find me a men's tennis shoe that is of the same brand as products in one of the following pictures. It needs to have price between $60 and $120 with at least 11 reviews.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_price(__page__)",
+          "required_contents": {
+            "required_values": [
+              ">= 60",
+              "<= 120"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:shopping_get_num_reviews(__page__)",
+          "required_contents": {
+            "required_values": [
+              ">= 11"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_attributes(__page__, 'manufacturer |OR| brand name')",
+          "required_contents": {
+            "must_include": [
+              "Asics |OR| Nike"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "Men",
+              "Tennis Shoe"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_079",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 35,
+    "intent": "Search for \"loveseat\" in the Furniture category and return the links of the most recent two items that are not black or gray.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "http://localhost:9980/index.php?page=item&id=33441",
+          "http://localhost:9980/index.php?page=item&id=42263"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_080",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 39,
+    "intent": "Find the three most recent bikes with predominantly red frames in the \"Bikes\" category, and tell me the size of their frames in inches.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "18",
+          "14",
+          "19"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_081",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 73,
+    "intent": "Find me the cheapest posting from Delaware that has the same brand as the product in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=78325",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_082",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 108,
+    "intent": "Tell me the name of the lister with the most expensive green vehicle from West Virginia.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Daiki Lee"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_083",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 326,
+    "intent": "Purchase the cheapest headphones that has the same brand as the one in the image, in blue.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+          "required_contents": {
+            "must_include": [
+              "B08KKW2ZS2",
+              "Mint"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_084",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 82,
+    "intent": "Find the most expensive purple hard-case book, and tell me how much it costs in dollars.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "1100"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=44383",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_085",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 154,
+    "intent": "Find me a set of headphones of the same brand as the product in this picture.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_attributes(__page__, 'manufacturer |OR| brand name')",
+          "required_contents": {
+            "must_include": [
+              "Sony"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".fotorama__stage__frame",
+          "eval_vqa": [
+            {
+              "question": "Is this a headphone? (yes/no)",
+              "answer": "yes"
+            }
+          ]
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_086",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 3,
+    "intent": "Find me the most recently posted item in the \"Photo + video\" category that is not completely black in color. It should be between $1000 to $1200.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=39343",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_087",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 2,
+    "intent": "Find me the most recently posted item in the \"Jewelry\" category with a red gem. It should be between $300 to $600.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=10066",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_088",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 297,
+    "intent": "Find me a hoodie that has the same brand as the one the man is wearing in the picture.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".fotorama__stage__frame",
+          "eval_vqa": [
+            {
+              "question": "Is this a hoodie? (yes/no)",
+              "answer": "yes"
+            }
+          ]
+        }
+      ],
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "document.querySelector('.page-title').textContent",
+          "required_contents": {
+            "must_include": [
+              "Champion"
+            ]
+          }
+        }
+      ],
+      "string_note": "",
+      "reference_answer_raw_annotation": ""
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_089",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 284,
+    "intent": "That second picture in the Wikipedia page looks delicious! Can you order 2 pounds of thin slices for me in OneStopShop?",
+    "start_url": "http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/Wagyu |AND| http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "func:get_query_text(__page__, \".order-details-items.ordered\")",
+          "required_contents": {
+            "must_include": [
+              "B08ZS89DVV",
+              "Thin Slices",
+              "2lbs"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_090",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 7,
+    "intent": "Return the links of the 2 most recent items in the \"Cell phones\" category within $300 to $600 that are white in color.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "http://localhost:9980/index.php?page=item&id=40404",
+          "http://localhost:9980/index.php?page=item&id=38125"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_091",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 109,
+    "intent": "How many miles does the most expensive white sports car in the \"Cars + trucks\" category from Ohio have?",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "36K |OR| 36,000 |OR| 36000"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_092",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 371,
+    "intent": "Search for \"hoodie\" and buy me a hoodie (in any color) with a jack-o-lantern design for less than 10 dollars.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+          "required_contents": {
+            "must_include": [
+              "B09G2YFQHF"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_093",
+    "category": "high_distraction",
+    "site": "reddit",
+    "task_id": 117,
+    "intent": "What is the birth year of the dog with pink hair? Answer using the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/memes/85200 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "2005"
+        ]
+      }
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_094",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 325,
+    "intent": "Purchase the cheapest item that closely resembles the item on the right in the image, in blue.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+          "required_contents": {
+            "must_include": [
+              "B09443ZWQD",
+              "Blue"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_095",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 44,
+    "intent": "Find me the cheapest item in the \"Posters & Prints\" category that comes in blue.",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/palacelearning-the-starry-night-1889-by-vincent-van-gogh-fine-art-poster-wall-art-print-laminated-18-x-24.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_096",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 374,
+    "intent": "Buy me a phone case (from the \"Basic Cases\" category) with a Barbie theme between 12-14 dollars.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+          "required_contents": {
+            "must_include": [
+              "B09NJKPD3N"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_097",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 88,
+    "intent": "Find the most expensive red vehicle in the \"Cars + trucks\" category from Virginia with trees in the background of its image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=50736",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_098",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 354,
+    "intent": "Find me shoes that are of the same brand as the product in this picture. It needs to be less than 70 dollars.",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "lambda:(() => { res = parseFloat(document.querySelector(\"#maincontent > div.columns > div > div.product-info-main > div.product-info-price > div.price-box.price-final_price > span > span\").outerText.substr(1)); return res ? res : 0; })()",
+          "required_contents": {
+            "required_values": [
+              "< 70"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "Croc"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_099",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 189,
+    "intent": "Can you add the two most expensive fully black VR headsets in the \"Virtual Reality\" category to the comparison page?",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/catalog/product_compare",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "ZJJY VR Headsets, Virtual Reality Headset, Bluetooth Controller for iPhone 11/Pro/X/Xs/Max/XR/8P/7P,for Samsung S20/S10/S9/S8/Plus/Note 10/9/8,Phones w/ 4.5-6.2in Screen, L025xq",
+              "ZNBJJWCP 3D VR Glasses Headset Virtual Reality Goggles Play Movies Photos Enjoyment for Smartphones"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_100",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 328,
+    "intent": "Buy eight batteries of the same type as shown in the image while minimizing costs.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+          "required_contents": {
+            "must_include": [
+              "B001B826IY",
+              "2.40"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_101",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 29,
+    "intent": "Show me the first red coat in the search results for \"winter coat\".",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/smooto-winter-coats-women-s-warm-hooded-thick-padded-outerwear-jackets-overcoat.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_102",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 89,
+    "intent": "Find the most expensive car from Virginia that is neon green.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=63326",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_103",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 69,
+    "intent": "List out reviewers, if exist, who mention 'hot' for the item in black packaging",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Prodajr"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "Prodajr"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_104",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 172,
+    "intent": "Navigate to the cheapest listing in the \"Furniture category\" with three blue chairs suitable for a workplace in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=23701",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_105",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 171,
+    "intent": "Navigate to the oldest listing in the \"Cell phones\" category which has a hot pink screen in the image.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=32832",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_106",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 27,
+    "intent": "Show me the first white table in the search results for \"table\".",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/n-a-yyhen-beautiful-three-legged-wooden-coffee-tableiving-room-balcony-simple-end-table-white.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_107",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 56,
+    "intent": "Find the cheapest snowblower that is not red in color.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=25929",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_108",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 74,
+    "intent": "Find the most expensive truck from Ohio that is white.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=14818",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_109",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 25,
+    "intent": "Search for \"raincoat\" and show me the first item that is blue in color",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/wuai-women-oversized-raincoats-rain-jackets-plus-size-lightweight-waterproof-trench-coat-outdoor-packable-windbreaker-s-5xl.html |OR| http://localhost:7770/jspoyou-mens-windproof-rain-jacket-detachable-hooded-lightweight-breathable-trench-coat-winter-warm-packable-raincoat-outwear.html |OR| http://localhost:7770/lightweight-hooded-rain-coat-womens-waterproof-zipper-jacket-windproof-waterproof-raincoat-jacket-light-comfy-outdoor.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_110",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 26,
+    "intent": "Search for \"plush toy\" and show me the first item that is pink in color",
+    "start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/olpchee-foldable-plush-children-s-sofa-backrest-chair-cute-cartoon-infant-baby-seat-for-living-room-bedroom-corgi.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_111",
+    "category": "high_distraction",
+    "site": "reddit",
+    "task_id": 196,
+    "intent": "Can you take me to the comments section of the hottest post (of all time) in the art forum where the post is only in black and white?",
+    "start_url": "http://localhost:9999",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/Art/30842/moods-of-maizie-by-me-pen-2022",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "easy"
+  },
+  {
+    "benchmark_id": "webpqb_112",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 167,
+    "intent": "Find me a shoe that is designed for the sport depicted in the first picture and has the same brand as products in the second picture. It needs to have the same color as the third picture.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "Such an item is not available on OneStopMarket.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_113",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 178,
+    "intent": "For the cheapest listing in the \"Music instruments\" category with a white guitar from West Virginia or Delaware, tell me the price in dollars.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "41 |OR| fourty one"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_114",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 289,
+    "intent": "Add 72 cans of the purple energy drink from this page to my shopping cart.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart/",
+          "locator": "lambda:(() => {try {return Array.from(document.querySelectorAll('.item-info')).find(el => el.textContent.includes('V8 +Energy, Healthy Energy Drink, Steady Energy from Black and Green Tea, Pomegranate Blueberry, 8 Ounce Can ,Pack of 24')).querySelector('input').getAttribute('data-item-qty')} catch (e) {return ' '}})()",
+          "required_contents": {
+            "must_include": [
+              "3"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_115",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 156,
+    "intent": "Find me a printer of the same brand as the product in this picture. It needs to be white and have at least 11 reviews with an average rating greater than 4.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/hp-deskjet-f380-all-in-one-printer-scanner-copier.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_116",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 153,
+    "intent": "Find me a game console of the same brand as the product in this picture.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:shopping_get_product_attributes(__page__, 'manufacturer |OR| brand name')",
+          "required_contents": {
+            "must_include": [
+              "Microsoft"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".fotorama__stage__frame",
+          "eval_vqa": [
+            {
+              "question": "Is this a game console? (yes/no)",
+              "answer": "yes"
+            }
+          ]
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_117",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 122,
+    "intent": "Find the oldest listed red book in the \"Books\" category, and tell me how much it costs in dollars.",
+    "start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=69456",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_118",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 272,
+    "intent": "Can you search for \"Cheerios\", and add the family sized blue Cheerios cereal to my cart and order it only if the total comes out to less than $43?",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Frosted Cheerios Breakfast Cereal with Oats, Gluten Free, 18.4 oz (Pack of 7)"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_119",
+    "category": "high_distraction",
+    "site": "classifieds",
+    "task_id": 227,
+    "intent": "Show me the cheapest clock from the classifieds site with the green animal at the top of the image on OneStopMarket.",
+    "start_url": "http://localhost:9980 |AND| http://localhost:7770/storage-basket-cube-forest-animal-fox-deer-flower-large-collapsible-toys-storage-box-bin-laundry-organizer-for-closet-shelf-nursery-kids-bedroom-15x11x9-5-in-1-pack.html",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=71222",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard"
+  },
+  {
+    "benchmark_id": "webpqb_120",
+    "category": "high_distraction",
+    "site": "shopping",
+    "task_id": 327,
+    "intent": "Purchase the cheapest item that has the same functionality as this, in black.",
+    "start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+          "required_contents": {
+            "must_include": [
+              "B09RB14X4D",
+              "Black"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "medium"
+  },
+  {
+    "benchmark_id": "webpqb_121",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 38,
+    "intent": "Find the three most recent grey or silver sedans in the \"Cars + trucks\" category, and tell me how much mileage each has.",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "175k |OR| 175000 |OR| 175,000",
+          "153k |OR| 153000 |OR| 153,000",
+          "154k |OR| 154000 |OR| 154,000"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_122",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 87,
+    "intent": "Add all the items I need to make this to my shopping cart.",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "hot dog",
+              "roll |OR| rolls |OR| bun",
+              "mustard"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_123",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 118,
+    "intent": "Add this exact product to my wish list. I think it might be in the \"Men > Clothing\" category but I'm not certain.",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/wishlist/?limit=50",
+          "locator": "document.querySelector('.products-grid.wishlist').textContent",
+          "required_contents": {
+            "must_include": [
+              "INTIMO Elf The Movie Men's Cotton Headed Ninny Muggins Allover Holiday Christmas Film Loungewear Pajama Pants"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_124",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 110,
+    "intent": "Search for \"mario kart\" and tell me how many games are in the image of the most recently listed item that costs at least $300.",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "0 |OR| zero"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=10&iPage=8'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_125",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 57,
+    "intent": "What is the sum of the area, in sq km, of the top two countries that has the most uniformly dense transportation network? Answer using the information from the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/124818 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "387711 |OR| 387,711"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/124818 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_126",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 63,
+    "intent": "What is the highest elevation (in ft) of the home state of the team that surpassed Buffalo Bills in both defensive rating and offensive rating during the 2022 Season? Answer using the information from the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/EarthPorn",
+    "wrong_start_url": "http://localhost:9999/f/EarthPorn",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/82193 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3213 |OR| 3,213"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/82193 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/EarthPorn'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_127",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 115,
+    "intent": "Add this exact product to my shopping cart. I think it is in the \"Patio Furniture & Accessories\" category.",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Modway EEI-2923-GRY-GRY Aura Outdoor Patio Wicker Rattan Sofa Gray"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_128",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 24,
+    "intent": "Find this post and tell me what the top comment says.",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Nah fam, that's a",
+          "psychonaut"
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/pics/45632/-/comment/792645",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "Nah fam, that's a psychonaut"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_129",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 84,
+    "intent": "Find the most expensive ring that has an image taken as a selfie, and tell me how much it costs in dollars.",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "6000"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=43966",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_130",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 62,
+    "intent": "Who potrayed the character in friends that has the most intimate connections? Answer using the information from the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/memes",
+    "wrong_start_url": "http://localhost:9999/f/memes",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/82234 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "exact_match": "Lisa Kudrow"
+      }
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/82234 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/memes'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_131",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 35,
+    "intent": "Search for \"loveseat\" in the Furniture category and return the links of the most recent two items that are not black or gray.",
+    "start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=74603",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "http://localhost:9980/index.php?page=item&id=33441",
+          "http://localhost:9980/index.php?page=item&id=42263"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=74603'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_132",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 72,
+    "intent": "I like the products in the image. Can you find the cheapest posting from Delaware where I can buy similar items, if there's one?",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=43255",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_133",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 63,
+    "intent": "Find the most expensive video game item with the character from the image on its display.",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=17379",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_134",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 122,
+    "intent": "Find the oldest listed red book in the \"Books\" category, and tell me how much it costs in dollars.",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=69456",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_135",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 32,
+    "intent": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/nyc/44500 |OR| http://localhost:9999/f/nyc/44527 |OR| http://localhost:9999/f/pics/89551 |OR| http://localhost:9999/f/pics/110950 |OR| http://localhost:9999/f/nyc/130377",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_136",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 157,
+    "intent": "Find me protein bars of the same brand as the product in this picture. It needs to have price between $30 and $50.",
+    "start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "original_start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/kellogg-s-special-k-protein-bars-meal-replacement-protein-snacks-value-size-chocolatey-chip-cookie-dough-19oz-box-12-bars.html",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/home-kitchen/wall-art/posters-prints.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_137",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 28,
+    "intent": "Add a comment on the most recently posted painting of a bridge with the title \"Question\" and text \"When did you acquire it?\".",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=12085",
+          "locator": "func:get_query_text(__page__, '.comments_list h3')",
+          "required_contents": {
+            "must_include": [
+              "Question by Blake Sullivan"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=12085",
+          "locator": "func:get_query_text(__page__, '.comments_list')",
+          "required_contents": {
+            "must_include": [
+              "When did you acquire it?"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_138",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 85,
+    "intent": "Find the most expensive ring that does not show the physical ring in the image, and tell me how much it costs in dollars.",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3200"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=57020",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_139",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 112,
+    "intent": "Search for \"basketball\" and navigate to the cheapest item that has a man in a suit in its image.",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=68564",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=10&iPage=8'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_140",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 21,
+    "intent": "Find and upvote this post. I think it was posted in /f/OldSchoolCool.",
+    "start_url": "http://localhost:9999/f/memes/41674",
+    "wrong_start_url": "http://localhost:9999/f/memes/41674",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9999/f/OldSchoolCool/56995/goerge-clooney-1990",
+          "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+          "required_contents": {
+            "must_include": [
+              "vote vote--user-upvoted"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/memes/41674'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_141",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 6,
+    "intent": "Search for 'Nike slide slippers'. List the full product names of red ones on the first page and tell me the price range of the available products",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Nike Men's Air Max Camden Slide Sandal",
+          "Nike Men's Benassi JDI Fanny Pack Slides",
+          "Nike Offcourt Slide Mens Bq4639-002 Size 12",
+          "Nike Jordan Men's Break Slide Red AR6374-602",
+          "42.81",
+          "69.00"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "These models are availiable: Nike Men's Air Max Camden Slide Sandal, Nike Men's Benassi JDI Fanny Pack Slides, Nike Offcourt Slide Mens Bq4639-002 Size 12, Nike Jordan Men's Break Slide Red AR6374-602. The price ranges from $42.81 to $69.00"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_142",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 71,
+    "intent": "Find the most expensive item posted from Delaware which is of the same item as in the image.",
+    "start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=12399 |OR| http://localhost:9980/index.php?page=item&id=53168",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=16826'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_143",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 49,
+    "intent": "What is the first year the Summer Olympics include the women's version of the sport that had the largest average male athlete weight in the 2012 Olympics? Answer using the information from the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/82181 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "1976"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/82181 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_144",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 100,
+    "intent": "What is the number shown on the image of the most expensive race car in the Arts + crafts section?",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "61 |OR| sixty one"
+        ]
+      },
+      "reference_url": "http://localhost:9980/index.php?page=item&id=2354",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_145",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 4,
+    "intent": "Navigate to my listing of the white car and change the price to $25000. Update the price in the description as well.",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84144",
+          "locator": "func:get_query_text(__page__, '.price')",
+          "required_contents": {
+            "must_include": [
+              "25000.00"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84144",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_include": [
+              "$25000 |OR| $25,000"
+            ]
+          }
+        },
+        {
+          "url": "http://localhost:9980/index.php?page=item&id=84144",
+          "locator": "func:get_query_text(__page__, '.desc')",
+          "required_contents": {
+            "must_exclude": [
+              "30000",
+              "30,000"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_146",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 122,
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "126.65"
+        ]
+      },
+      "reference_url": "http://localhost:7770/martha-stewart-herbal-botany-wall-art-living-room-decor-floral-linen-canvas-home-accent-country-lifestyle-bathroom-decoration-ready-to-hang-poster-painting-for-bedroom-17-84-x-21-84-green.html",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "$126.65"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_147",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 51,
+    "intent": "Find me the most recent painting in the \"Arts + crafts\" category of a town that looks like this.",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=39336",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_148",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 101,
+    "intent": "Explore the \"Art + crafts\" category, and find the most expensive painting of the city in this image.",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=18",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=83533",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=18'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_149",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 137,
+    "intent": "Return an image link of the cheapest Canon printer from the \"Printers & Accessories\" category which shows it printing something.",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "B005TI2Q6O.0.jpg"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "http://localhost:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B005TI2Q6O.0.jpg"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_150",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 47,
+    "intent": "I recall seeing this exact item on the site, help me find the most recent post of it. I recall that it was very expensive.",
+    "start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9980/index.php?page=item&id=7434",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=16826'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_151",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 39,
+    "intent": "Find the three most recent bikes with predominantly red frames in the \"Bikes\" category, and tell me the size of their frames in inches.",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=10&iPage=8",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "18",
+          "14",
+          "19"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=10&iPage=8'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_152",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 111,
+    "intent": "Add this exact product to my shopping cart. I think it is in the \"Herbs, Spices & Seasonings\" category.",
+    "start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "wrong_start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "Lawry's Chipotle Cinnamon Rub, 27 oz - One 27 Ounce Container of Chipotle Cinnamon Rub Made of Chipotle Chili Pepper, Cinnamon, and Paprika Perfect for Burgers, Pork, Chicken, and Vegetables"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_153",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 27,
+    "intent": "Make a Reddit post with this image (https://images.pexels.com/photos/14267038/pexels-photo-14267038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) in the most relevant subreddit, and navigate to its comments section.",
+    "start_url": "http://localhost:9999/f/EarthPorn",
+    "wrong_start_url": "http://localhost:9999/f/EarthPorn",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/MechanicalKeyboards",
+      "url_note": "GOLD in PRED",
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".submission__content",
+          "eval_fuzzy_image_match": "https://images.pexels.com/photos/14267038/pexels-photo-14267038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/EarthPorn'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_154",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 27,
+    "intent": "How many of the listings in \"Rvs + campers\" posted on 16th November 2023 show the interior of the car?",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "3 |OR| three"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_155",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 54,
+    "intent": "When did programming language that has the largest variance in salary first appear? Answer using the information from the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/memes/41674",
+    "wrong_start_url": "http://localhost:9999/f/memes/41674",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/18215 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "exact_match": "August 1993"
+      }
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/18215 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/memes/41674'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_156",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 46,
+    "intent": "What is the 2022 total nominal GDP of the area that produces most sugarcane in the year of 2021? (in billion)? Answer using the information from the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/gaming",
+    "wrong_start_url": "http://localhost:9999/f/gaming",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/103854 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "39000 |OR| 39,000"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/103854 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/gaming'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_157",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 86,
+    "intent": "Add all the items I need to make this to my shopping cart.",
+    "start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "wrong_start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "hot dog",
+              "roll |OR| rolls |OR| bun"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/electronics/video-projectors.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_158",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 59,
+    "intent": "What is the total employees (in 2021) of the accounting firms that provide both tax and legal services? Answer using the information from the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/39014 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "876374 |OR| 876,374"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/39014 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_159",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 126,
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/wall-art/posters-prints.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "This exact item does is not available on OneStopMarket.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/wall-art/posters-prints.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_160",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 170,
+    "intent": "Can you find me a product that combines the functions of the items in the following images?",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "original_start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+          "required_contents": {
+            "must_include": [
+              "Projection Keyboard"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_161",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 174,
+    "intent": "Can you find me a product that combines the functions of the items in the following images and buy it for me?",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "original_start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector('.order-details-items.ordered').outerText",
+          "required_contents": {
+            "must_include": [
+              "roller skate"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_162",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 111,
+    "intent": "Search for \"hockey\" and tell me the team name of the jersey on the most recently listed item.",
+    "start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "wrong_start_url": "http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "Kings"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=search&sCategory=9&iPage=2&sShowAs=gallery'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_163",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 26,
+    "intent": "Find this post and tell me what the top comment says.",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "This post does not exist on the site.",
+      "reference_answer_raw_annotation": "This post does not exist on the site."
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_164",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 155,
+    "intent": "Find me a set of headphones of the same brand as the product in this picture. It needs to be silver colored and have at least 10 reviews with an average rating greater than 4.",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html",
+    "original_start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/sony-wh1000xm3-bluetooth-wireless-noise-canceling-headphones-silver-wh-1000xm3-s-renewed.html |OR| http://localhost:7770/sony-h900n-hi-res-noise-cancelling-wireless-headphone-grayish-black-renewed.html |OR| http://localhost:7770/sony-mdrx10-red-simon-cowell-x-headphones-with-50mm-diaphragms.html",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/dairy-cheese-eggs/cheese.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_165",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 53,
+    "intent": "What was the total asset value (in trillions of USD, to 3 decimal places) of the fifth largest employer in China in 2017? Answer using the information from the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/Music",
+    "wrong_start_url": "http://localhost:9999/f/Music",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/60171 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "0.585"
+        ]
+      }
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/60171 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/Music'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_166",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 152,
+    "intent": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+    "start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "wrong_start_url": "http://localhost:7770/electronics/video-projectors.html",
+    "original_start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/sales/order/view/order_id/165/",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/electronics/video-projectors.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_167",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 28,
+    "intent": "Write a story about this picture and post it in the most relevant subreddit.",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/pics",
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.submission__inner')",
+          "required_contents": {
+            "must_include": [
+              "baseball"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.submission__submitter')",
+          "required_contents": {
+            "must_include": [
+              "MarvelsGrantMan136"
+            ]
+          }
+        },
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.submission__info')",
+          "required_contents": {
+            "must_include": [
+              "pics |OR| sports"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".submission__image",
+          "eval_fuzzy_image_match": "coco_images/000000515982.jpg"
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_168",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 6,
+    "intent": "I'm trying to do some research about the post with this image. Tell me how many comments this post has.",
+    "start_url": "http://localhost:9999/f/headphones",
+    "wrong_start_url": "http://localhost:9999/f/headphones",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "28"
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/food/82940/homemade-sweet-amp-spicy-sticky-chinese-pork-belly",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "28"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/headphones'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_169",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 61,
+    "intent": "Who directed the movie that is shown as the background picture of the third highest earning movie production companies? Answer using the information from the Wikipedia site in the second tab.",
+    "start_url": "http://localhost:9999/f/food/18831",
+    "wrong_start_url": "http://localhost:9999/f/food/18831",
+    "original_start_url": "http://localhost:9999/f/dataisbeautiful/103828 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "exact_match": "Sam Mendes"
+      }
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/f/dataisbeautiful/103828 |AND| http://localhost:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing'. Wrong start injected: 'http://localhost:9999/f/food/18831'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_170",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 9,
+    "intent": "Help me make a post selling this item and navigate to it. Price it at $10 cheaper than the most similar item on the site between $750-800 (of the same color). If there are multiple similar items, use the most recent posting.",
+    "start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=16826",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": true,
+    "eval": {
+      "eval_types": [
+        "program_html",
+        "page_image_query"
+      ],
+      "reference_answers": null,
+      "program_html": [
+        {
+          "url": "last",
+          "locator": "func:get_query_text(__page__, '.price')",
+          "required_contents": {
+            "must_include": [
+              "785.00"
+            ]
+          }
+        }
+      ],
+      "page_image_query": [
+        {
+          "eval_image_url": "last",
+          "eval_image_class": ".item-photos",
+          "eval_fuzzy_image_match": "http://localhost:9980/oc-content/uploads/42906/42906.png"
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=16826'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_171",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 23,
+    "intent": "Find this post and tell me what the top comment says.",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "https://imgur.com/a/P1YyboM"
+        ]
+      },
+      "reference_url": "http://localhost:9999/f/photoshopbattles/24816/-/comment/155650",
+      "program_html": [],
+      "string_note": "",
+      "reference_answer_raw_annotation": "https://imgur.com/a/P1YyboM"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_172",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 175,
+    "intent": "Find me a wireless white game controller that is of the same brand as the product in this picture and buy it for me. It needs to have at 10 reviews and be priced between $110-$120.",
+    "start_url": "http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html",
+    "wrong_start_url": "http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html",
+    "original_start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": false,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "func:shopping_get_latest_order_url()",
+          "locator": "document.querySelector('.order-details-items.ordered').outerText",
+          "required_contents": {
+            "must_include": [
+              "B07P3L5GMW"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/grocery-gourmet-food/breads-bakery/cookies.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_173",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 38,
+    "intent": "I'd like to find the subreddit for the city this photo was taken in. Can you navigate to it?",
+    "start_url": "http://localhost:9999/f/movies",
+    "wrong_start_url": "http://localhost:9999/f/movies",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/jerseycity",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/movies'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_174",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 151,
+    "intent": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+    "start_url": "http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3",
+    "wrong_start_url": "http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3",
+    "original_start_url": "http://localhost:7770",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:7770/sales/order/view/order_id/157/",
+      "program_html": [],
+      "url_note": "EXACT"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770'. Wrong start injected: 'http://localhost:7770/office-products/office-electronics/printers-accessories.html?p=3'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_175",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 89,
+    "intent": "Add something like the thing at the top of this image to my shopping cart.",
+    "start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "wrong_start_url": "http://localhost:7770/home-kitchen/bedding/blankets-throws.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "hair brush"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/home-kitchen/bedding/blankets-throws.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_176",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 117,
+    "intent": "Add this exact product to my wish list. I think it might be in the \"Office Furniture & Lighting > Chairs & Sofas\" category but I'm not certain.",
+    "start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "wrong_start_url": "http://localhost:7770/video-games/nintendo-switch.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/wishlist/?limit=50",
+          "locator": "document.querySelector('.products-grid.wishlist').textContent",
+          "required_contents": {
+            "must_include": [
+              "Flash Furniture Low Back Designer Armless White Ribbed Swivel Task Office Chair"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/video-games/nintendo-switch.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_177",
+    "category": "recovery",
+    "site": "classifieds",
+    "source_task_id": 102,
+    "intent": "Tell me the height in inches of the most recently listed item in Art + crafts section portraying the person in the image.",
+    "start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "wrong_start_url": "http://localhost:9980/index.php?page=item&id=48575",
+    "original_start_url": "http://localhost:9980",
+    "storage_state": "./.auth/classifieds_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "must_include": [
+          "8 1/2 |OR| eight and a half |OR| 8.5 |OR| eight point five"
+        ]
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": ""
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9980'. Wrong start injected: 'http://localhost:9980/index.php?page=item&id=48575'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_178",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 125,
+    "intent": "Tell me how much this exact item costs on OneStopMarket.",
+    "start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "wrong_start_url": "http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "string_match"
+      ],
+      "reference_answers": {
+        "fuzzy_match": "N/A"
+      },
+      "reference_url": "",
+      "program_html": [],
+      "string_note": "This exact item is not available on OneStopMarket.",
+      "reference_answer_raw_annotation": "N/A"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/clothing-shoes-jewelry/women/uniforms-work-safety.html'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_179",
+    "category": "recovery",
+    "site": "reddit",
+    "source_task_id": 13,
+    "intent": "Can you help me find and navigate to the comments section of the post with this image?",
+    "start_url": "http://localhost:9999/f/gaming",
+    "wrong_start_url": "http://localhost:9999/f/gaming",
+    "original_start_url": "http://localhost:9999/forums/all",
+    "storage_state": "./.auth/reddit_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "url_match"
+      ],
+      "reference_answers": null,
+      "reference_url": "http://localhost:9999/f/Newark/35719",
+      "program_html": [],
+      "url_note": "GOLD in PRED"
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:9999/forums/all'. Wrong start injected: 'http://localhost:9999/f/gaming'. Agent must recognize wrong state and navigate to correct starting point."
+  },
+  {
+    "benchmark_id": "webpqb_180",
+    "category": "recovery",
+    "site": "shopping",
+    "source_task_id": 107,
+    "intent": "I need something to store the item on the right. Add one to my shopping cart.",
+    "start_url": "http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html",
+    "wrong_start_url": "http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html",
+    "original_start_url": "http://localhost:7770/",
+    "storage_state": "./.auth/shopping_state.json",
+    "require_login": true,
+    "require_reset": false,
+    "eval": {
+      "eval_types": [
+        "program_html"
+      ],
+      "reference_answers": null,
+      "reference_url": "",
+      "program_html": [
+        {
+          "url": "http://localhost:7770/checkout/cart",
+          "locator": "",
+          "required_contents": {
+            "must_include": [
+              "microwave",
+              "storage |OR| shelf |OR| rack"
+            ]
+          }
+        }
+      ]
+    },
+    "overall_difficulty": "hard",
+    "construction_note": "Original task starts at 'http://localhost:7770/'. Wrong start injected: 'http://localhost:7770/beauty-personal-care/oral-care/orthodontic-supplies.html'. Agent must recognize wrong state and navigate to correct starting point."
+  }
+]

@@ -13,8 +13,13 @@ env/
 annotations/
 logs/
 
-data/
 downloads/
+data/*
+!data/benchmark_tasks/
+!data/benchmark_tasks/**
+!data/canonical/
+data/canonical/*
+!data/canonical/README.md
 
 *.parquet
 *.part
@@ -24,3 +29,9 @@ downloads/
 *.tgz
 
 *.log
+
+!data/canonical/human_playwright_steps.parquet
+!data/canonical/human_playwright_trajectories.parquet
+!data/canonical/mind2web_trajectories.parquet
+!data/canonical/vwa_gpt4v_som_steps.parquet
+!data/canonical/vwa_gpt4v_som_trajectories.parquet
