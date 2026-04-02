@@ -46,13 +46,44 @@ def resolve_storage_state(storage_state: str, auth_root: str) -> str | None:
     return None
 
 
+def split_compound_url(raw_url: str | None) -> list[dict[str, str]]:
+    if not raw_url:
+        return []
+    raw_url = raw_url.strip()
+    if not raw_url:
+        return []
+
+    if " |AND| " in raw_url:
+        operator = "AND"
+        parts = [part.strip() for part in raw_url.split(" |AND| ") if part.strip()]
+    elif " |OR| " in raw_url:
+        operator = "OR"
+        parts = [part.strip() for part in raw_url.split(" |OR| ") if part.strip()]
+    else:
+        operator = "SINGLE"
+        parts = [raw_url]
+
+    return [
+        {
+            "url": url,
+            "compound_operator": operator,
+            "compound_index": str(idx),
+        }
+        for idx, url in enumerate(parts, start=1)
+    ]
+
+
 def planned_pages(card: dict[str, Any]) -> list[dict[str, str]]:
-    pages = [{"page_role": "start", "url": card.get("start_url", "")}]
+    pages: list[dict[str, str]] = []
+    for target in split_compound_url(card.get("start_url", "")):
+        pages.append({"page_role": "start", **target})
     if card.get("task_family") == "recovery":
         if card.get("original_start_url"):
-            pages.append({"page_role": "original_start", "url": card["original_start_url"]})
+            for target in split_compound_url(card["original_start_url"]):
+                pages.append({"page_role": "original_start", **target})
         if card.get("wrong_start_url") and card["wrong_start_url"] != card.get("start_url"):
-            pages.append({"page_role": "wrong_start", "url": card["wrong_start_url"]})
+            for target in split_compound_url(card["wrong_start_url"]):
+                pages.append({"page_role": "wrong_start", **target})
     return pages
 
 
@@ -66,7 +97,8 @@ def load_done_keys(path: Path) -> set[tuple[str, str]]:
             if not line:
                 continue
             rec = json.loads(line)
-            key = (str(rec.get("task_card_id")), str(rec.get("page_role")))
+            page_key = str(rec.get("page_key") or rec.get("page_role"))
+            key = (str(rec.get("task_card_id")), page_key)
             done.add(key)
     return done
 
@@ -107,13 +139,16 @@ def main() -> None:
             if storage_state:
                 context_kwargs["storage_state"] = storage_state
             context = browser.new_context(**context_kwargs)
-            page = context.new_page()
 
             for target in planned_pages(card):
-                key = (card["task_card_id"], target["page_role"])
+                page_key = f"{target['page_role']}__{target['compound_index']}"
+                key = (card["task_card_id"], page_key)
                 if key in done_keys:
                     continue
-                screenshot_name = f"{card['task_card_id'].replace(':', '__')}__{target['page_role']}.png"
+                screenshot_name = (
+                    f"{card['task_card_id'].replace(':', '__')}__"
+                    f"{target['page_role']}__{target['compound_index']}.png"
+                )
                 screenshot_path = screenshot_dir / screenshot_name
                 record = {
                     "task_card_id": card["task_card_id"],
@@ -122,12 +157,16 @@ def main() -> None:
                     "task_family": card.get("task_family"),
                     "category_target": card.get("category_target", ""),
                     "page_role": target["page_role"],
+                    "page_key": page_key,
+                    "compound_operator": target["compound_operator"],
+                    "compound_index": int(target["compound_index"]),
                     "requested_url": target["url"],
                     "storage_state_resolved": storage_state,
                     "screenshot_path": str(screenshot_path),
                     "status": "error",
                     "timestamp": datetime.now().isoformat(),
                 }
+                page = context.new_page()
                 try:
                     response = page.goto(target["url"], wait_until="networkidle", timeout=args.timeout_ms)
                     page.screenshot(path=str(screenshot_path), full_page=False)
@@ -141,9 +180,11 @@ def main() -> None:
                     )
                 except Exception as exc:  # pragma: no cover - depends on runtime env
                     record["error"] = repr(exc)
+                finally:
+                    page.close()
                 append_jsonl(output_path, record)
                 print(
-                    f"[{idx}/{total}] {card['task_card_id']} {target['page_role']} -> "
+                    f"[{idx}/{total}] {card['task_card_id']} {page_key} -> "
                     f"{record['status']}"
                 )
             context.close()
