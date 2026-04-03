@@ -29,6 +29,11 @@ Rules:
 - Prefer "unsure" instead of over-claiming.
 - Prefer "revise" over "drop" unless the evidence clearly shows the task is unusable.
 - Recovery judgments must focus on whether the wrong start is visibly wrong-but-recoverable.
+- For normal base tasks, judge whether the shown page is a reasonable benchmark starting state, not whether the final target item is already visible.
+- Homepages, category landing pages, search pages, and listing pages can still support a task even if the exact target product/category is not yet on screen.
+- Use "category_supported=no" only when the page is clearly broken, off-site, blank, irrelevant, or obviously incompatible with the task.
+- For base tasks, all recovery_* fields must be "n/a".
+- For high_distraction tasks, if the screenshot does not yet reveal enough clutter evidence, prefer "unsure" over "no".
 
 Return JSON only.
 Do not use markdown fences.
@@ -102,6 +107,15 @@ def load_manifest(path: Path) -> dict[str, list[dict[str, Any]]]:
     return by_task
 
 
+def active_primary_candidates(card: dict[str, Any]) -> list[str]:
+    candidates = set(card.get("category_candidates", []))
+    labels = []
+    for label in ("multi_path", "high_distraction"):
+        if label in candidates:
+            labels.append(label)
+    return labels
+
+
 def build_user_prompt(card: dict[str, Any], capture_rows: list[dict[str, Any]]) -> str:
     capture_summary = [
         {
@@ -112,6 +126,36 @@ def build_user_prompt(card: dict[str, Any], capture_rows: list[dict[str, Any]]) 
         }
         for row in capture_rows
     ]
+    task_family = str(card.get("task_family", ""))
+    primary_candidates = active_primary_candidates(card)
+    family_guidance = [
+        "Judgment target: decide whether the screenshots provide valid START-STATE evidence for the candidate benchmark category.",
+        "Do not require the exact target product, category page, or final answer to already be visible on the screenshot.",
+    ]
+    if task_family == "recovery":
+        family_guidance.extend(
+            [
+                "This is a recovery task.",
+                "Focus on whether the wrong-start page is visibly wrong but still recoverable.",
+                "Use recovery_* fields based on the visible mismatch, recoverability, misleadingness, and answer leakage.",
+            ]
+        )
+    else:
+        family_guidance.extend(
+            [
+                "This is a normal base task.",
+                "Judge whether the shown page is a plausible and useful start page for the task on the correct site.",
+                "For base tasks, set every recovery_* field to \"n/a\".",
+            ]
+        )
+    if "multi_path" in primary_candidates:
+        family_guidance.append(
+            "multi_path=yes when the page offers multiple plausible navigation/search/filter routes; a homepage can still qualify."
+        )
+    if "high_distraction" in primary_candidates:
+        family_guidance.append(
+            "high_distraction=yes only when visible clutter/confusable choices are actually evident; otherwise use unsure."
+        )
     lines = [
         f"task_card_id: {card.get('task_card_id', '')}",
         f"task_family: {card.get('task_family', '')}",
@@ -122,6 +166,9 @@ def build_user_prompt(card: dict[str, Any], capture_rows: list[dict[str, Any]]) 
         f"wrong_start_url: {card.get('wrong_start_url', '')}",
         f"visual_dependence_prior: {card.get('visual_dependence_prior', '')}",
         f"category_candidates: {card.get('category_candidates', [])}",
+        "",
+        "judgment_guidance:",
+        *[f"- {line}" for line in family_guidance],
         "",
         "capture_summary:",
         json.dumps(capture_summary, ensure_ascii=False, indent=2),
@@ -165,25 +212,53 @@ def derive_triage(card: dict[str, Any], parsed: dict[str, Any]) -> str:
             return "drop"
         return "revise"
 
+    keep_multi_path = "multi_path" in candidates and category_supported in {"yes", "unsure"} and parsed.get("multi_path_valid") == "yes"
+    keep_distraction = (
+        "high_distraction" in candidates
+        and category_supported in {"yes", "unsure"}
+        and parsed.get("distraction_visible") == "yes"
+        and parsed.get("distractor_density") in {"medium", "high"}
+    )
+    if keep_multi_path or keep_distraction:
+        return "keep"
+
     if "multi_path" in candidates:
-        if category_supported == "yes" and parsed.get("multi_path_valid") == "yes":
-            return "keep"
         if category_supported == "no" and parsed.get("multi_path_valid") == "no":
-            return "drop"
+            return "revise"
         return "revise"
 
     if "high_distraction" in candidates:
-        if (
-            category_supported == "yes"
-            and parsed.get("distraction_visible") == "yes"
-            and parsed.get("distractor_density") in {"medium", "high"}
-        ):
-            return "keep"
         if category_supported == "no" and parsed.get("distraction_visible") == "no":
-            return "drop"
+            return "revise"
         return "revise"
 
     return "revise"
+
+
+def sanitize_for_family(card: dict[str, Any], parsed: dict[str, Any]) -> dict[str, Any]:
+    clean = dict(parsed)
+    candidates = set(card.get("category_candidates", []))
+    family = card.get("task_family")
+
+    if family != "recovery":
+        for key in [
+            "recovery_wrong_start_valid",
+            "recovery_recoverable",
+            "recovery_misleadingness",
+            "recovery_answer_leakage",
+            "recovery_severity",
+        ]:
+            clean[key] = "n/a"
+
+    if "multi_path" not in candidates:
+        for key in ["multi_path_valid", "route_plurality"]:
+            clean[key] = "n/a"
+
+    if "high_distraction" not in candidates:
+        for key in ["distraction_visible", "distractor_density", "target_confusability"]:
+            clean[key] = "n/a"
+
+    return clean
 
 
 def load_done_ids(path: Path) -> set[str]:
@@ -292,7 +367,7 @@ def main() -> None:
         raw_text = None
         try:
             raw_text = judge.generate_raw(card, capture_rows)
-            parsed = extract_json(raw_text)
+            parsed = sanitize_for_family(card, extract_json(raw_text))
             record = {
                 "task_card_id": task_id,
                 "base_task_card_id": card.get("base_task_card_id"),
