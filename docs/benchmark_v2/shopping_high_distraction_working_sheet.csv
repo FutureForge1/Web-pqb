@@ -1,2 +1,2 @@
-任务ID,站点,原始任务,为什么选它,推荐陷阱类型,今天先做什么,正确答案ID,陷阱答案ID,改后任务,裁判怎么改,当前状态,备注
-vwa:shopping:221,shopping,"Can you add the most expensive smartwatch (from the ""Smartwatches"" category) to my cart that is less than $200 and not black?","有排序目标；有类别限制；有颜色限制；很容易做出前排错误候选","负面约束陷阱","先打开 Smartwatches 列表，找价格<200 且最显眼但颜色是黑色的手表，确认它能当陷阱",,,,,"待看页面","先确认正确答案和陷阱答案都存在"
+配对ID,基础任务ID,站点,构造模板,原始版任务,干扰版任务,原始版正确答案ID,干扰版正确答案ID,陷阱答案ID,为什么这个陷阱容易误导,原始版裁判怎么改,干扰版裁判怎么改,当前状态,备注
+shopping_221,vwa:shopping:221,shopping,负面约束陷阱,"Can you add the most expensive smartwatch (from the ""Smartwatches"" category) to my cart that is less than $200?","Can you add the most expensive smartwatch (from the ""Smartwatches"" category) to my cart that is less than $200 and not black?",待确认（大概率是更贵的深色 Apple Watch）,SAMSUNG Galaxy Watch Active 2 Rose Gold,待确认（深色 Apple Watch）,更贵更显眼而且看起来更像自然首选，模型容易忽略“not black”这个限制,接受原始版正确商品并拒绝其他更低价候选,接受 Rose Gold 三星表并拒绝深色 Apple Watch,今天先确认页面,先人工确认 3 个候选都存在
