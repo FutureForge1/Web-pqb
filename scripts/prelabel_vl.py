@@ -2,9 +2,12 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
 import sys
+import urllib.error
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -14,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from canonical_data import available_canonical_sources, load_canonical_steps, load_step_image  # noqa: E402
+from canonical_data import available_canonical_sources, load_canonical_steps, load_step_image, load_step_image_bytes  # noqa: E402
 
 
 DEFAULT_SYSTEM_PROMPT = """You are a Web-PQB prelabeling judge.
@@ -48,8 +51,13 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--model-path",
-        required=True,
+        default=None,
         help="Local HF snapshot path or model id, e.g. /root/autodl-tmp/.../Qwen2.5-VL-7B-Instruct",
+    )
+    parser.add_argument(
+        "--remote-url",
+        default=None,
+        help="Optional remote inference endpoint, e.g. http://127.0.0.1:8008/predict",
     )
     parser.add_argument(
         "--output",
@@ -69,7 +77,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--trust-remote-code", action="store_true")
     parser.add_argument("--local-files-only", action="store_true")
     parser.add_argument("--html-chars", type=int, default=0, help="Reserved for future use.")
-    return parser.parse_args()
+    parser.add_argument("--remote-timeout", type=int, default=180, help="HTTP timeout in seconds for remote inference.")
+    args = parser.parse_args()
+    if not args.model_path and not args.remote_url:
+        parser.error("Either --model-path or --remote-url must be provided.")
+    return args
 
 
 def normalize_source_keys(source_keys: list[str]) -> tuple[str, ...]:
@@ -317,6 +329,60 @@ class QwenVLJudge:
         return parsed, raw_text
 
 
+class RemoteVLJudge:
+    def __init__(self, args: argparse.Namespace):
+        self.args = args
+        self.url = args.remote_url
+        self.timeout = args.remote_timeout
+
+    def predict(self, step: dict[str, Any]) -> tuple[dict[str, Any], str]:
+        before = load_step_image_bytes(step, "before")
+        after = load_step_image_bytes(step, "after")
+        if before is None or after is None:
+            raise RuntimeError("Missing before/after screenshot for this step.")
+
+        payload = {
+            "system_prompt": DEFAULT_SYSTEM_PROMPT,
+            "user_prompt": build_user_prompt(step),
+            "before_image_b64": base64.b64encode(before).decode("ascii"),
+            "after_image_b64": base64.b64encode(after).decode("ascii"),
+            "generation": {
+                "max_new_tokens": self.args.max_new_tokens,
+                "temperature": self.args.temperature,
+                "top_p": self.args.top_p,
+            },
+        }
+
+        request = urllib.request.Request(
+            self.url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=self.timeout) as response:
+                body = response.read().decode("utf-8")
+        except urllib.error.HTTPError as exc:
+            details = exc.read().decode("utf-8", errors="ignore")
+            raise RuntimeError(f"Remote inference HTTP {exc.code}: {details}") from exc
+        except urllib.error.URLError as exc:
+            raise RuntimeError(f"Remote inference connection failed: {exc}") from exc
+
+        try:
+            result = json.loads(body)
+        except Exception as exc:
+            raise RuntimeError(f"Remote inference returned non-JSON response: {body[:300]}") from exc
+
+        if "error" in result:
+            raise RuntimeError(f"Remote inference error: {result['error']}")
+
+        parsed = result.get("parsed")
+        raw_text = result.get("raw_text", "")
+        if not isinstance(parsed, dict):
+            raise RuntimeError(f"Remote inference returned invalid payload: {result}")
+        return parsed, raw_text
+
+
 def main() -> None:
     args = parse_args()
     selected_sources = normalize_source_keys(args.sources)
@@ -335,7 +401,7 @@ def main() -> None:
         done_ids, existing_step_o = load_existing_predictions(output_path)
 
     trajectory_o_state = compute_prev_state_from_existing(steps, existing_step_o)
-    judge = QwenVLJudge(args)
+    judge = RemoteVLJudge(args) if args.remote_url else QwenVLJudge(args)
 
     total = len(steps)
     for offset, step in enumerate(steps, start=1):
@@ -353,7 +419,7 @@ def main() -> None:
             "source": step.get("dataset_source"),
             "trajectory_id": trajectory_id,
             "step_idx": step_idx,
-            "model_name": Path(args.model_path).name.rstrip("/") or args.model_path,
+            "model_name": Path(args.model_path).name.rstrip("/") if args.model_path else "remote_vl_judge",
             "prompt_version": "webpqb_v1",
             "gamma_penalty": 0.5,
             "pred_O_prev": prev_o,
